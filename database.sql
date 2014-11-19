@@ -1,0 +1,7 @@
+CREATE TABLE Account(
+	idAccount NUMBER PRIMARY KEY,
+	username NVARCHAR2(20) NOT NULL,
+	email NVARCHAR2(20) NOT NULL,
+	password NUMBER NOT NULL
+);
+
