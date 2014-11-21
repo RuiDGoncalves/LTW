@@ -6,14 +6,15 @@
 	$email = $_POST['emailP'];
 	$password = $_POST['passwordP'];
 
-	$id = $dbh->prepare('SELECT max(idAccount) FROM account');
-	//$stmt++;
-	//echo $id;
-$id = NULL;
-	$stmt = $dbh->prepare('INSERT INTO account (idAccount, username, email, password) VALUES (?, ?, ?, ?)');
-	echo $username . $password . $email;
-	$stmt->execute(array($id, $username, $email, $password));
+	$idAccount=0;
+	$id1 = $dbh->prepare("SELECT count(*) FROM account");
+	$id1->execute();
+	$id3 = $id1->fetch();
+	echo $id3[0];
 
-	//echo ('You have successfuy created a new account. Welcome to your website');
+	$stmt = $dbh->prepare('INSERT INTO account (idAccount, username, email, password) VALUES (?, ?, ?, ?)');
+	$stmt->execute(array($id3[0], $username, $email, $password));
+
+	echo ('You have successfuy created a new account. Welcome to your website');
 
 ?>
