@@ -1,33 +1,28 @@
 <?php
 
-	try {
-		$dbh = new PDO('sqlite:database.db');
+	$dbh = new PDO('sqlite:database.db');
 
-		$username = $_POST['username'];
-		$password = $_POST['password'];
+	$username = $_POST['usernameL'];
+	$password = $_POST['passwordL'];
 
-		$var = 0;
-		$stmt = $dbh->prepare('SELECT username, password FROM account WHERE username = ? AND password = ?');
-		$stmt->execute(array($username, $password));
+	$check = 0;
+	$stmt = $dbh->prepare('SELECT username, password FROM account WHERE username = ? AND password = ?');
+	$stmt->execute(array($username, $password));
 
-		while ($row = $stmt->fetch()) {
-			//print_r($row);
- 			if (in_array($username, $row)) {
- 				if ($password === $row['password']) {
- 					$var = 1;
- 					echo ("Welcome back, " . $row['username'] . '!');
- 					break;
- 				}
- 				//else echo("asd");
+	while ($row = $stmt->fetch()) {
+		//print_r($row);
+ 		if (in_array($username, $row)) {
+ 			if ($password === $row['password']) {
+ 				$check = 1;
+ 				echo ("Welcome back, " . $row['username'] . '!');
+ 				break;
  			}
- 			//echo("asd");
-		}
-		if($var == 0)
-			echo('Sorry bro, wrong username or password :(');
+ 			//else echo("asd");
+ 		}
+ 		//echo("asd");
 	}
-	catch(Exception $e) {
-		echo 'Error ' . $e->getMessage();
-	}
+	if($check == 0)
+		echo('Sorry bro, wrong username or password :(');
 
 	//echo ('Sorry bro, wrong username or password :(');	
 
