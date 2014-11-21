@@ -6,6 +6,7 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
+		$var = 0;
 		$stmt = $dbh->prepare('SELECT username, password FROM account WHERE username = ? AND password = ?');
 		$stmt->execute(array($username, $password));
 
@@ -13,11 +14,16 @@
 			//print_r($row);
  			if (in_array($username, $row)) {
  				if ($password === $row['password']) {
+ 					$var = 1;
  					echo ("Welcome back, " . $row['username'] . '!');
  					break;
  				}
+ 				//else echo("asd");
  			}
+ 			//echo("asd");
 		}
+		if($var == 0)
+			echo('Sorry bro, wrong username or password :(');
 	}
 	catch(Exception $e) {
 		echo 'Error ' . $e->getMessage();
