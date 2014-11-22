@@ -7,17 +7,18 @@
 	$password = $_POST['passwordR'];
 
 	$check = 0;
-	$stmt1 = $dbh->prepare('SELECT username, email FROM account WHERE username = ? AND email = ?');
-	$stmt1->execute(array($username, $email));
+	$stmt1 = $dbh->prepare('SELECT username FROM account WHERE username = ?');
+	$stmt1->execute(array($username));
+	$result = $stmt1->fetchAll();
 
-	echo 'asd';
-	while ($row = $stmt1->fetch()) {
-		echo ($username);
+	foreach ($result as $row) {
+		//echo ($row['username']);
  		if (in_array($username, $row)) {
  			$check = 1;
- 			echo 'You are already registered';
+ 			echo 'That username has already been taken <br>
+ 				  Please, choose another one';
  			break;
- 		}
+ 		}	
  			
 	}
 
