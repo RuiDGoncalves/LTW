@@ -14,7 +14,7 @@
  		if (in_array($username, $row)) {
  			if ($password === $row['password']) {
  				$check = 1;
- 				echo ("Welcome back, " . $row['username'] . '!');
+ 				printf ("Welcome back, %s!", $row['username']);
  				break;
  			}
  			//else echo("asd");
@@ -28,8 +28,7 @@
 
 ?>
 
-<!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Back to the form</title>
     <meta charset="utf-8">

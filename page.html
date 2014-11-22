@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title>Inicial page</title>
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="inicial.css" hreflang="en">
 	</head>
 
 	<body>
-		<h1>If you already have an account, log in</h1>
-		<form action="login.php" method="post">
-			<label>Username: 
-				<input type="text" name="usernameL" required> 
-			</label>
-			<label>Password: 
-				<input type="password" name="passwordL" required> 
-			</label>
-				<input type="submit" value="Log in!"><br>			
-		</form>
-		<br>
-		<h1>Don't have an account?! Register now</h1>
-		<form action="register.php" method="post">
-			<label>Username: 
-				<input type="text" name="usernameR" required> 
-			</label>
-			<label>Email: 
-				<input type="email" name="emailR" required> 
-			</label>
-			<label>Password: 
-				<input type="password" name="passwordR" required> 
-			</label>
-			<input type="submit" value="Register!"><br>
-		</form>
+		<header>
+		<div id="login">
+			<form action="login.php" method="post">
+				<label>Username: 
+					<input type="text" name="usernameL" required>
+				</label>
+				<label>Password: 
+					<input type="password" name="passwordL" required>
+				</label>
+					<input type="submit" value="Log in!"><br>
+			</form>
+		</div>
+		<br><br>
+		<div id="register">
+			<form action="register.php" method="post">
+				<label>Username: 
+					<input type="text" name="usernameR" required><br>
+				</label>
+				<label>Email: 
+					<input type="email" name="emailR" required><br>
+				</label>
+				<label>Password: 
+					<input type="password" name="passwordR" maxlength="8" required><br>
+				</label>
+				<input type="submit" value="Register!"><br>
+			</form>
+		</div>
+		</header>
 	</body>
 </html>
 

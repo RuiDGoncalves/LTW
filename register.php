@@ -15,8 +15,8 @@
 		//echo ($row['username']);
  		if (in_array($username, $row)) {
  			$check = 1;
- 			echo 'That username has already been taken <br>
- 				  Please, choose another one';
+ 			echo "That username has already been taken <br>
+ 				  Please, choose another one";
  			break;
  		}	
  			
@@ -33,13 +33,12 @@
 		$stmt2 = $dbh->prepare('INSERT INTO account (idAccount, username, email, password) VALUES (?, ?, ?, ?)');
 		$stmt2->execute(array($id2[0], $username, $email, $password));
 
-		echo 'You have successfuy created a new account. Welcome to your website ' . $username . '!';
+		printf ("You've successfuy created a new account. Welcome to your website %s!", $username);
 	}
 
 ?>
 
-<!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Back to the form</title>
     <meta charset="utf-8">
