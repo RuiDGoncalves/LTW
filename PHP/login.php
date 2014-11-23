@@ -36,6 +36,6 @@
 
   <body>
   	<br>
- 	<a href="page.html"> ---Back--- </a>
+ 	<a href="/LTW/index.html"> ---Back--- </a>
   </body>
 </html>

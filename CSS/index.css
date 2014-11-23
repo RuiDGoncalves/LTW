@@ -1,8 +1,5 @@
-html {
+body {
 	background-image: url('http://static.simpledesktops.com/uploads/desktops/2014/10/07/hex-000097.png');
-	background-position: 50% 0%;
-	background-size: auto;
-	
 }
 
 .login {
@@ -14,7 +11,9 @@ html {
 
 .register {
 	width: 240px;
- 	margin: 136px auto;
+	top: 180px;
+ 	margin: 10px auto;
+ 	position: relative;
 }
 
 .register h1 {
@@ -31,7 +30,8 @@ html {
 	text-shadow:#000 0px 1px 5px;
 	color: white;
 	text-align: center;
-	font: 13px Arial;
+	font-size: 13px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 .formreg {
@@ -53,6 +53,7 @@ html {
 	border-bottom-style: none;
 	border-color: #B3B3A7;
 	margin-bottom:0px;
+	font-size: 16px;
 }
 
  .formreg #email {
@@ -66,6 +67,7 @@ html {
 	color:#1A1A1A;
 	border-radius:0px;
 	margin-bottom:0px;
+	font-size: 16px;
  }
 
 .formreg #password {
@@ -81,6 +83,7 @@ html {
 	border-top-style: none;
 	border-color: #B3B3A7;
 	margin-bottom:0px;
+	font-size: 16px;
 }
 
 .formreg #submit {
@@ -102,9 +105,12 @@ html {
 }
 
 footer {
+	position: relative;
 	text-align: center;
-	margin: -3% auto;
+	top: 190px;
+	margin: auto;
 	color: white;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 sup {

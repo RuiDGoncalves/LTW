@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Inicial page</title>
+		<title>ITPoll</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="CSS/inicial.css" hreflang="en">
+		<link rel="stylesheet" href="CSS/index.css" hreflang="en">
+		<link rel="shortcut icon" href="http://a3.mzstatic.com/us/r30/Purple6/v4/0d/8f/41/0d8f4100-d9e5-cd74-8eed-59f03c0a3f3a/icon175x175.png">
 	</head>
 
 	<body>
 		<div class="login">
-			<form action="login.php" method="post">
+			<form action="PHP/login.php" method="post">
 				<label>Username: 
 					<input type="text" name="usernameL" placeholder="Username" required>
 				</label>
@@ -21,7 +22,7 @@
 		<div class="register">
 			<h1>Register</h1>
 			<p>Don't have an account yet?<br> Register now in our new website.</p>
-			<form class="formreg" action="register.php" method="post">
+			<form class="formreg" action="PHP/register.php" method="post">
 				<input type="text" id="username" name="usernameR" placeholder="Username" required><br>
 				<input type="email" id="email" name="emailR" placeholder="Email" required><br>
 				<input type="password" id="password" name="passwordR" maxlength="8" placeholder="Password" required><br>
@@ -29,7 +30,7 @@
 			</form>
 		</div>
 		<footer>
-			<p>2014 LTW<sup>TM</sup>, Inc. © All rights reserved. </p>
+			<p>2014 LTW © All rights reserved. </p>
 		<footer>
 	</body>
 </html>
