@@ -1,20 +1,29 @@
 body {
 	background-image: url('http://waldir.org/blog/wp-content/uploads/2014/02/php.png');
-	background-position: 50% 20%;
+	background-position: 50% 45%;
 	background-size: auto;
-	position: absolute;
-
 }
 
-#login {
-	float: right;
+.login {
+	position: fixed;
+  	right: 10px;
+  	top: 10px;
 	color: yellow;	
 }
 
-#register {
+.register {
 	color: yellow;
+	width: 320px;
+ 	margin: 260px auto;
 }
 
-table {
-    border-collapse: collapse;
+h1 {
+	text-align: center;
+	font: 25px bold Andalus;
+	text-transform: uppercase;
+}
+
+.formreg {
+	width: 100%;
+	opacity:0.1;
 }

@@ -6,35 +6,28 @@
 		<link rel="stylesheet" href="inicial.css" hreflang="en">
 	</head>
 
-	<body>
-		<header>
-		<div id="login">
+	<body>		
+		<div class="login">
 			<form action="login.php" method="post">
 				<label>Username: 
-					<input type="text" name="usernameL" required>
+					<input type="text" name="usernameL" placeholder="Username" required>
 				</label>
 				<label>Password: 
-					<input type="password" name="passwordL" required>
+					<input type="password" name="passwordL" placeholder="Password" required>
 				</label>
 					<input type="submit" value="Log in!"><br>
 			</form>
 		</div>
-		<br><br>
-		<div id="register">
-			<form action="register.php" method="post">
-				<label>Username: 
-					<input type="text" name="usernameR" required><br>
-				</label>
-				<label>Email: 
-					<input type="email" name="emailR" required><br>
-				</label>
-				<label>Password: 
-					<input type="password" name="passwordR" maxlength="8" required><br>
-				</label>
+		<div class="register">
+			<h1>Register now</h1>
+			<form class="formreg" action="register.php" method="post">
+				<input type="text" name="usernameR" placeholder="Username" required><br>
+				<input type="email" name="emailR" placeholder="Email" required><br>
+				<input type="password" name="passwordR" maxlength="8" placeholder="Password" required><br>
 				<input type="submit" value="Register!"><br>
 			</form>
 		</div>
-		</header>
+		<br>
 	</body>
 </html>
 
