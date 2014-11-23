@@ -1,8 +1,8 @@
 html {
-	background-image: url('http://waldir.org/blog/wp-content/uploads/2014/02/php.png');
-	background-position: 50% 45%;
+	background-image: url('http://static.simpledesktops.com/uploads/desktops/2014/10/07/hex-000097.png');
+	background-position: 50% 0%;
 	background-size: auto;
-	position: relative;
+	
 }
 
 .login {
@@ -14,7 +14,7 @@ html {
 
 .register {
 	width: 240px;
- 	margin: 160px auto;
+ 	margin: 136px auto;
 }
 
 .register h1 {
@@ -47,7 +47,7 @@ html {
 	width: 98%;
 	padding:15px 0px 15px 8px;
 	background:rgba(250,250,250,1);
-	color:#6E6E6E;
+	color:#1A1A1A;
 	border-top-left-radius: 0.5em;
 	border-top-right-radius: 0.5em;
 	border-bottom-style: none;
@@ -63,7 +63,7 @@ html {
 	padding:15px 0px 15px 8px;
 	background:rgba(250,250,250,1);
 	border-color: #B3B3A7;
-	color:#6E6E6E;
+	color:#1A1A1A;
 	border-radius:0px;
 	margin-bottom:0px;
  }
@@ -75,7 +75,7 @@ html {
 	width: 98%;
 	padding:15px 0px 15px 8px;
 	background:rgba(250,250,250,1);
-	color:#6E6E6E;
+	color:#1A1A1A;
 	border-bottom-left-radius: 0.5em;
 	border-bottom-right-radius: 0.5em;
 	border-top-style: none;
@@ -102,10 +102,9 @@ html {
 }
 
 footer {
-	position: relative;
 	text-align: center;
-	margin: -80px auto;
-	color:white;
+	margin: -3% auto;
+	color: white;
 }
 
 sup {
