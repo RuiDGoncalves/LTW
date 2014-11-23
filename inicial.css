@@ -1,29 +1,113 @@
-body {
+html {
 	background-image: url('http://waldir.org/blog/wp-content/uploads/2014/02/php.png');
 	background-position: 50% 45%;
 	background-size: auto;
+	position: relative;
 }
 
 .login {
-	position: fixed;
+	position: absolute;
   	right: 10px;
   	top: 10px;
 	color: yellow;	
 }
 
 .register {
-	color: yellow;
-	width: 320px;
- 	margin: 260px auto;
+	width: 240px;
+ 	margin: 160px auto;
 }
 
-h1 {
+.register h1 {
+	text-shadow:#000 0px 1px 5px;
+	color: white;
 	text-align: center;
-	font: 25px bold Andalus;
+	font: 35px bold;
+	font-weight: 800;
+	font-family: Times, sans-serif;
 	text-transform: uppercase;
+}
+
+.register p {
+	text-shadow:#000 0px 1px 5px;
+	color: white;
+	text-align: center;
+	font: 13px Arial;
 }
 
 .formreg {
 	width: 100%;
-	opacity:0.1;
+	color: #6E6E6E;
+}
+
+.formreg #username {
+	font-family: Arial;
+	border:none;
+	outline:none;
+	border:1px solid rgba(0,0,0,1);
+	width: 98%;
+	padding:15px 0px 15px 8px;
+	background:rgba(250,250,250,1);
+	color:#6E6E6E;
+	border-top-left-radius: 0.5em;
+	border-top-right-radius: 0.5em;
+	border-bottom-style: none;
+	border-color: #B3B3A7;
+	margin-bottom:0px;
+}
+
+ .formreg #email {
+ 	border:none;
+	outline:none;
+	border:1px solid rgba(0,0,0,1);
+	width: 98%;
+	padding:15px 0px 15px 8px;
+	background:rgba(250,250,250,1);
+	border-color: #B3B3A7;
+	color:#6E6E6E;
+	border-radius:0px;
+	margin-bottom:0px;
+ }
+
+.formreg #password {
+	border:none;
+	outline:none;
+	border:1px solid rgba(0,0,0,1);
+	width: 98%;
+	padding:15px 0px 15px 8px;
+	background:rgba(250,250,250,1);
+	color:#6E6E6E;
+	border-bottom-left-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+	border-top-style: none;
+	border-color: #B3B3A7;
+	margin-bottom:0px;
+}
+
+.formreg #submit {
+	width: 50%;
+	margin: 10px 100px 150px 60px;
+	padding: 5px 5px 5px 8px;
+	border-radius: 5px;
+	color: white;
+	text-transform: uppercase;
+ 	text-shadow: #000 0px 1px 5px;
+	border: 1px solid #000;
+ 	opacity: 0.85;
+ 	background-color: #19A347;
+}
+
+.formreg #submit:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+
+footer {
+	position: relative;
+	text-align: center;
+	margin: -80px auto;
+	color:white;
+}
+
+sup {
+	font-size: 9px;
 }

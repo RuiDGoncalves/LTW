@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="inicial.css" hreflang="en">
 	</head>
 
-	<body>		
+	<body>
 		<div class="login">
 			<form action="login.php" method="post">
 				<label>Username: 
@@ -19,15 +19,18 @@
 			</form>
 		</div>
 		<div class="register">
-			<h1>Register now</h1>
+			<h1>Register</h1>
+			<p>Don't have an account yet? Register now in our new website.</p>
 			<form class="formreg" action="register.php" method="post">
-				<input type="text" name="usernameR" placeholder="Username" required><br>
-				<input type="email" name="emailR" placeholder="Email" required><br>
-				<input type="password" name="passwordR" maxlength="8" placeholder="Password" required><br>
-				<input type="submit" value="Register!"><br>
+				<input type="text" id="username" name="usernameR" placeholder="Username" required><br>
+				<input type="email" id="email" name="emailR" placeholder="Email" required><br>
+				<input type="password" id="password" name="passwordR" maxlength="8" placeholder="Password" required><br>
+				<input type="submit" id="submit" value="Register!"><br>
 			</form>
 		</div>
-		<br>
+		<footer>
+			<p>2014 LTW<sup>TM</sup>, Inc. © All rights reserved. </p>
+		<footer>
 	</body>
 </html>
 
