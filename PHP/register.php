@@ -5,21 +5,27 @@
 	$username = $_POST['usernameR'];
 	$email = $_POST['emailR'];
 	$password = $_POST['passwordR'];
-
 	$check = 0;
-	$stmt1 = $dbh->prepare('SELECT username FROM account WHERE username = ?');
-	$stmt1->execute(array($username));
+
+	$stmt1 = $dbh->prepare('SELECT username, email FROM account WHERE username = ? or email = ?');
+	$stmt1->execute(array($username, $email));
 	$result = $stmt1->fetchAll();
 
 	foreach ($result as $row) {
 		//echo ($row['username']);
- 		if (in_array($username, $row)) {
+ 		if (in_array($username, $row) or in_array($username, $row)) {
  			$check = 1;
- 			echo "That username has already been taken <br>
+ 			echo "That username/email already exists <br> Please, choose another one";
+ 			break;
+ 		}
+
+ 		/*if (in_array($email, $row)) {
+ 			$check = 1;
+ 			echo "That email already exists <br>
  				  Please, choose another one";
  			break;
- 		}	
- 			
+ 		}*/
+ 		
 	}
 
 	if($check == 0) {
