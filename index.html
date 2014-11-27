@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Pollaux</title>
+		<title>POLLAUX</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="CSS/index.css" hreflang="en">
 		<link rel="shortcut icon" href="http://a3.mzstatic.com/us/r30/Purple6/v4/0d/8f/41/0d8f4100-d9e5-cd74-8eed-59f03c0a3f3a/icon175x175.png">
@@ -10,25 +10,27 @@
 	<body>
 		<header>
 			<img class="header_img" src="http://a3.mzstatic.com/us/r30/Purple6/v4/0d/8f/41/0d8f4100-d9e5-cd74-8eed-59f03c0a3f3a/icon175x175.png" 
-				 alt="Pollaux" height="30" width="30">
-			<span class="header_title">Pollaux</span>
+				 alt="Pollaux" height="25" width="25">
+			<b class="header_title">Pollaux</b>
 		</header>
-		<div class="login">
-			<form action="PHP/login.php" method="post">
-				<input type="text" name="usernameL" placeholder="Username" required>
-				<input type="password" name="passwordL" placeholder="Password" required>
-				<input type="submit" value="Log in!"><br>
-			</form>
-		</div>
-		<div class="register">
-			<h1>Register</h1>
-			<form class="formreg" action="PHP/register.php" method="post">
-				<input type="text" id="username" name="usernameR" placeholder="Username" required><br>
-				<input type="email" id="email" name="emailR" placeholder="Email" required><br>
-				<input type="password" id="password" name="passwordR" maxlength="8" placeholder="Password" required><br>
-				<input type="submit" id="submit" value="Register!"><br>
-			</form>
-		</div>
+		<nav>
+			<h1>POLLAUX</h1>
+			<div class="login">
+				<form action="PHP/login.php" method="post">
+					<input type="text" name="usernameL" placeholder="Username" required>
+					<input type="password" name="passwordL" placeholder="Password" required>
+					<input type="submit" value="Log in!"><br>
+				</form>
+			</div>
+			<div class="register">
+				<form class="formreg" action="PHP/register.php" method="post">
+					<input type="text" id="username" name="usernameR" placeholder="Username" required><br>
+					<input type="email" id="email" name="emailR" placeholder="Email" required><br>
+					<input type="password" id="password" name="passwordR" maxlength="8" placeholder="Password" required><br>
+					<input type="submit" id="submit" value="Register!"><br>
+				</form>
+			</div>
+		</nav>
 		<footer>
 			<p>2014 Pollaux © All rights reserved. </p>
 		<footer>

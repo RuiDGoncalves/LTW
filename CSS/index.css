@@ -1,40 +1,58 @@
+@font-face {
+	font-family: "Organo";
+	src: url("Organo.ttf")
+}
+
 body {
 	background-image: url('http://static.simpledesktops.com/uploads/desktops/2014/10/07/hex-000097.png');
+	background-repeat: repeat;
 	margin: auto;
 }
 
 header {
-	height: 50px;
+	height: 45px;
 	background-color: white;
 }
 
-.header_title {
+.header_img {
+	margin-top: 10px;
 	position: relative;
-	left: 90%;
+	left: 10%;
+}
+
+.header_title {
+	font-size: 20px;
+	font-family: Organo;
+	top: -13%;
+	color: #19A9C3;
+	margin: auto;
+	position: relative;
+	left: 82%;
+}
+
+nav h1 {
+	margin: 60px;
+	top: 100px;
+	text-shadow:#000 0px 1px 5px;
+	color: white;
+	text-align: center;
+	font: 65px bold;
+	font-weight: 800;
+	font-family: Organo;
 }
 
 .login {
 	position: absolute;
   	right: 10px;
-  	top: 100px;
+  	top: 80px;
 	color: yellow;	
 }
 
 .register {
 	width: 240px;
-	top: 180px;
+	top: 100px;
  	margin: 10px auto;
  	position: relative;
-}
-
-.register h1 {
-	text-shadow:#000 0px 1px 5px;
-	color: white;
-	text-align: center;
-	font: 35px bold;
-	font-weight: 800;
-	font-family: Times, sans-serif;
-	text-transform: uppercase;
 }
 
 .register p {
@@ -118,12 +136,8 @@ header {
 footer {
 	position: relative;
 	text-align: center;
-	top: 190px;
+	top: 95px;
 	margin: auto;
 	color: white;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-}
-
-sup {
-	font-size: 9px;
 }
