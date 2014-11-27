@@ -1,11 +1,22 @@
 body {
 	background-image: url('http://static.simpledesktops.com/uploads/desktops/2014/10/07/hex-000097.png');
+	margin: auto;
+}
+
+header {
+	height: 50px;
+	background-color: white;
+}
+
+.header_title {
+	position: relative;
+	left: 90%;
 }
 
 .login {
 	position: absolute;
   	right: 10px;
-  	top: 10px;
+  	top: 100px;
 	color: yellow;	
 }
 
