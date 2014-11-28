@@ -20,7 +20,6 @@
  			if ($incrip === $row['password']) {
  				$check = 1;
  				printf ("Welcome back, %s!", $row['username']);
- 				echo ini_get('session.gc_maxlifetime');
  				break;
  			}
  			//else echo("asd");
