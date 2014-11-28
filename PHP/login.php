@@ -5,14 +5,18 @@
 	$username = $_POST['usernameL'];
 	$password = $_POST['passwordL'];
 
+	$salt1 = "a)x%5";
+	$salt2 = "p!y@*";
+	$incrip = hash('ripemd128', "$salt1$password$salt2");
+
 	$check = 0;
 	$stmt = $dbh->prepare('SELECT username, password FROM account WHERE username = ? AND password = ?');
-	$stmt->execute(array($username, $password));
+	$stmt->execute(array($username, $incrip));
 
 	while ($row = $stmt->fetch()) {
 		//print_r($row);
  		if (in_array($username, $row)) {
- 			if ($password === $row['password']) {
+ 			if ($incrip === $row['password']) {
  				$check = 1;
  				printf ("Welcome back, %s!", $row['username']);
  				break;

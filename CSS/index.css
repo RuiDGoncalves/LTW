@@ -48,10 +48,10 @@ nav h1 {
 }
 
 .login {
-	position: absolute;
-  	right: 10px;
-  	top: 80px;
-	color: yellow;	
+	width: 240px;
+	top: 50px;
+ 	margin: 10px auto;
+ 	position: relative;	
 }
 
 .register {
@@ -61,20 +61,26 @@ nav h1 {
  	position: relative;
 }
 
-.register p {
-	text-shadow:#000 0px 1px 5px;
-	color: white;
-	text-align: center;
-	font-size: 13px;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-}
-
-.formreg {
+.form {
 	width: 100%;
 	color: #6E6E6E;
 }
 
-.formreg #username {
+ #formreg #email {
+ 	border:none;
+	outline:none;
+	border:1px solid rgba(0,0,0,1);
+	width: 100%;
+	padding:15px 0px 15px 8px;
+	background:rgba(250,250,250,1);
+	border-color: #B3B3A7;
+	color:#1A1A1A;
+	border-radius:0px;
+	margin-bottom:0px;
+	font-size: 16px;
+ }
+
+#username {
 	font-family: Arial;
 	border:none;
 	outline:none;
@@ -91,21 +97,7 @@ nav h1 {
 	font-size: 16px;
 }
 
- .formreg #email {
- 	border:none;
-	outline:none;
-	border:1px solid rgba(0,0,0,1);
-	width: 100%;
-	padding:15px 0px 15px 8px;
-	background:rgba(250,250,250,1);
-	border-color: #B3B3A7;
-	color:#1A1A1A;
-	border-radius:0px;
-	margin-bottom:0px;
-	font-size: 16px;
- }
-
-.formreg #password {
+#password {
 	border:none;
 	outline:none;
 	border:1px solid rgba(0,0,0,1);
@@ -121,7 +113,7 @@ nav h1 {
 	font-size: 16px;
 }
 
-.formreg #submit {
+#submit {
 	width: 50%;
 	margin: 10px 100px 150px 60px;
 	padding: 5px 5px 5px 8px;
@@ -131,12 +123,25 @@ nav h1 {
  	text-shadow: #000 0px 1px 5px;
 	border: 1px solid #000;
  	opacity: 0.85;
- 	background-color: #19A347;
+ 	background-color: #19A9C3;
 }
 
-.formreg #submit:hover{
+#submit:hover{
 	opacity: 1;
 	cursor: pointer;
+}
+
+.button {
+	-moz-appearance: button;
+    -ms-appearance: button;
+    -o-appearance: button;
+    -webkit-appearance: button;
+    appearance: button;
+	position: relative;
+	left: 90%;
+	top: -10%;
+	font: 20px bold;
+	border-top-radius: 0.3em;
 }
 
 footer {

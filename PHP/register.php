@@ -18,13 +18,6 @@
  			echo "That username/email already exists <br> Please, choose another one";
  			break;
  		}
-
- 		/*if (in_array($email, $row)) {
- 			$check = 1;
- 			echo "That email already exists <br>
- 				  Please, choose another one";
- 			break;
- 		}*/
  		
 	}
 
@@ -34,10 +27,13 @@
 		$id1 = $dbh->prepare("SELECT count(*) FROM account");
 		$id1->execute();
 		$id2 = $id1->fetch();
-		//echo $id3[0];
+		
+		$salt1 = "a)x%5";
+		$salt2 = "p!y@*";
+		$incrip = hash('ripemd128', "$salt1$password$salt2");
 
 		$stmt2 = $dbh->prepare('INSERT INTO account (idAccount, username, email, password) VALUES (?, ?, ?, ?)');
-		$stmt2->execute(array($id2[0], $username, $email, $password));
+		$stmt2->execute(array($id2[0], $username, $email, $incrip));
 
 		printf ("You've successfuy created a new account. Welcome to your website %s!", $username);
 	}
