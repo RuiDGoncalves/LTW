@@ -10,8 +10,15 @@ body {
 }
 
 header {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px	;
 	height: 45px;
-	background-color: white;
+	background: -webkit-linear-gradient(white, #E6E6E6);
+    background: -o-linear-gradient(white, #E6E6E6);
+    background: -moz-linear-gradient(white, #E6E6E6);
+    background: linear-gradient(white, #E6E6E6);
 }
 
 .header_img {
@@ -31,12 +38,11 @@ header {
 }
 
 nav h1 {
-	margin: 60px;
-	top: 100px;
+	margin: 100px;
 	text-shadow:#000 0px 1px 5px;
 	color: white;
 	text-align: center;
-	font: 65px bold;
+	font: 70px bold;
 	font-weight: 800;
 	font-family: Organo;
 }
@@ -50,7 +56,7 @@ nav h1 {
 
 .register {
 	width: 240px;
-	top: 100px;
+	top: 50px;
  	margin: 10px auto;
  	position: relative;
 }
@@ -136,7 +142,7 @@ nav h1 {
 footer {
 	position: relative;
 	text-align: center;
-	top: 95px;
+	top: 55px;
 	margin: auto;
 	color: white;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
