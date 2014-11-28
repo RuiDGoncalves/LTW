@@ -38,7 +38,7 @@ header {
 }
 
 nav h1 {
-	margin: 100px;
+	margin-top: 150px;
 	text-shadow:#000 0px 1px 5px;
 	color: white;
 	text-align: center;
@@ -50,21 +50,22 @@ nav h1 {
 .login {
 	width: 240px;
 	top: 50px;
- 	margin: 10px auto;
+ 	margin: auto;
  	position: relative;	
 }
 
 .register {
 	width: 240px;
 	top: 50px;
- 	margin: 10px auto;
+ 	margin: auto;
  	position: relative;
 }
 
 .form {
-	width: 100%;
+	
 	color: #6E6E6E;
 }
+
 
  #formreg #email {
  	border:none;
@@ -116,7 +117,7 @@ nav h1 {
 
 #submit {
 	width: 50%;
-	margin: 10px 100px 150px 60px;
+	margin: 10px 10px 100px 60px;
 	padding: 5px 5px 5px 8px;
 	border-radius: 5px;
 	color: white;
@@ -133,23 +134,24 @@ nav h1 {
 }
 
 .button {
-	-moz-appearance: button;
-    -ms-appearance: button;
-    -o-appearance: button;
-    -webkit-appearance: button;
-    appearance: button;
-	position: relative;
-	left: 90%;
-	top: -10%;
-	font: 20px bold;
-	border-top-radius: 0.3em;
+	width: 50%;
+	margin: 10px 10px 10px 60px;
+	padding: 20px 30px 20px 30px;
+	border-radius: 5px;
+	color: white;
+ 	text-shadow: #000 0px 1px 5px;
+	border: 1px solid #000;
+ 	opacity: 0.85;
+ 	background-color: #19A9C3;
+	text-decoration: none;
+	font-size: 25px;
 }
 
 footer {
 	position: relative;
 	text-align: center;
 	top: 30%;
-	margin: auto;
+	margin-top:100px;
 	color: white;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
