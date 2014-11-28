@@ -10,15 +10,17 @@
 	$incrip = hash('ripemd128', "$salt1$password$salt2");
 
 	$check = 0;
-	$stmt = $dbh->prepare('SELECT username, password FROM account WHERE username = ? AND password = ?');
+	$stmt = $dbh->prepare('SELECT username, password FROM account WHERE username = ? and password = ?');
 	$stmt->execute(array($username, $incrip));
 
 	while ($row = $stmt->fetch()) {
-		//print_r($row);
  		if (in_array($username, $row)) {
+			//echo ($row['password'] . '<br>');
+			//echo ($incrip);
  			if ($incrip === $row['password']) {
  				$check = 1;
  				printf ("Welcome back, %s!", $row['username']);
+ 				echo ini_get('session.gc_maxlifetime');
  				break;
  			}
  			//else echo("asd");
@@ -40,6 +42,6 @@
 
   <body>
   	<br>
- 	<a href="/LTW/index.html"> ---Back--- </a>
+ 	<a href="/LTW/login.html"> ---Back--- </a>
   </body>
 </html>
