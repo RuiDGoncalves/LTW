@@ -135,12 +135,11 @@ nav h1 {
 nav p {
 	color: white;
 	text-align: center;
+	margin-bottom: 20px;
 }
 
 .button {
-	position: relative;
-	left: 44.5%;
-	bottom: 20%;
+	margin: 725px;
 	padding: 20px 30px 20px 30px;
 	border-radius: 5px;
 	color: white;
@@ -155,8 +154,7 @@ nav p {
 footer {
 	position: relative;
 	text-align: center;
-	top: 30%;
-	margin-top:100px;
+	margin-top:70px;
 	color: white;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
