@@ -36,6 +36,14 @@ header {
 	position: relative;
 	left: 82%;
 }
+
+#user {
+	color: white;
+	font-size: 25px;
+	margin: 1000px 100px 10px 100px;
+	height: 20px;
+}
+
 li {
     display: inline;
     border: 0px solid #000;

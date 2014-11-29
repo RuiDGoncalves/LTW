@@ -1,5 +1,7 @@
 <?php
 
+	session_start();
+
 	$dbh = new PDO('sqlite:database.db');
 
 	$username = $_POST['usernameL'];
@@ -18,9 +20,10 @@
 			//echo ($row['password'] . '<br>');
 			//echo ($incrip);
  			if ($incrip === $row['password']) {
+ 				$_SESSION['username'] = $username;
+ 				$loggin_session = $_SESSION['username'];
  				$check = 1;
- 				printf ("Welcome back, %s!", $row['username']);
- 				header("Location: /LTW/main.html");
+ 				//header("Location: /LTW/main.php");
  				break;
  			}
  			//else echo("asd");
@@ -28,13 +31,16 @@
  		//echo("asd");
 	}
 	if($check == 0)
-		echo('Sorry bro, wrong username or password :(');
+		//echo('Sorry bro, wrong username or password :(');
 
 	//echo ('Sorry bro, wrong username or password :(');	
 
+	//include('main.php');
+
 ?>
 
-<html lang="en">
+
+<!--<html lang="en">
   <head>
     <title>Back to the form</title>
     <meta charset="utf-8">
@@ -44,4 +50,4 @@
   	<br>
  	<a href="/LTW/login.html"> ---Back--- </a>
   </body>
-</html>
+</html> -->

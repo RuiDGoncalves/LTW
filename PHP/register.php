@@ -1,5 +1,7 @@
 <?php
 
+	session_start();
+
 	$dbh = new PDO('sqlite:database.db');
 
 	$username = $_POST['usernameR'];
@@ -16,6 +18,7 @@
  		if (in_array($username, $row) or in_array($username, $row)) {
  			$check = 1;
  			echo "That username/email already exists <br> Please, choose another one";
+ 			session_destroy();
  			break;
  		}
  		
@@ -35,8 +38,10 @@
 		$stmt2 = $dbh->prepare('INSERT INTO account (idAccount, username, email, password) VALUES (?, ?, ?, ?)');
 		$stmt2->execute(array($id2[0], $username, $email, $incrip));
 
-		printf ("You've successfuy created a new account. Welcome to your website %s!", $username);
-		header("Location: /LTW/main.html");
+		$_SESSION['username'] = $username;
+ 		$loggin_session = $_SESSION['username'];
+		//printf ("You've successfuy created a new account. Welcome to your website %s!", $username);
+		header("Location: /LTW/main.php");
 	}
 
 ?>
