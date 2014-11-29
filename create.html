@@ -4,21 +4,21 @@
 		<title>Pollaux</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="CSS/create.css" hreflang="en">
-		<link rel="shortcut icon" href="icon.png">
+		<link rel="shortcut icon" href="Icons/icon.png">
 	</head>
 
 	<body>
 		<div class="wrapper">
 		<header>
-			<img class="header_img" src="icon.png" 
+			<img class="header_img" src="Icons/icon.png" 
 				 alt="Pollaux" height="25" width="25">
-			<a href="main.html"><b class="header_title">Pollaux</b></a>
-			<a href="/PHP/logout.php" class="logout"><img src="logout.png" height="25" width="25"></a>
+			<a href="main.php"><b class="header_title">Pollaux</b></a>
+			<a href="logout.php" class="logout"><img src="Icons/logout.png" height="25" width="25"></a>
 		</header>
 		<ul class="list">
-    		<a href="main.html"><li class="back">Back</li></a>
+    		<a href="main.php"><li class="back">Back</li></a>
 		</ul>
-		<form class="form" id="formlog" action="PHP/create.php" method="post">
+		<form class="form" id="formlog" action="create.php" method="post">
 			<input type="text" id="title" name="titleL" placeholder="Title" required><br>
 			<div><input type="text" id="question" name="question[]" placeholder="Question" required><br>
 			<input type="text" id="answer" name="question[]" placeholder="Answer" required><br></div>

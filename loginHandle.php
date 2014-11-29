@@ -3,11 +3,11 @@
 	session_start();
 
 	if(isset($_SESSION['username']) || isset($_COOKIE['username'])) {
-		header("Location: PHP/main.php");
+		header("Location: main.php");
 		exit();
 	}
 
-	$dbh = new PDO('sqlite:database.db');
+	$dbh = new PDO('sqlite:Database/database.db');
 
 	$username = $_POST['usernameL'];
 	$password = $_POST['passwordL'];

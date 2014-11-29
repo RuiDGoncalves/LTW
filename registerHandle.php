@@ -2,11 +2,17 @@
 
 	session_start();
 
+	if(isset($_SESSION['username']) || isset($_COOKIE['username'])) {
+		header("Location: main.php");
+		exit();
+	}
+
 	$dbh = new PDO('sqlite:database.db');
 
 	$username = $_POST['usernameR'];
 	$email = $_POST['emailR'];
 	$password = $_POST['passwordR'];
+
 	$check = 0;
 
 	$stmt1 = $dbh->prepare('SELECT username, email FROM account WHERE username = ? or email = ?');
@@ -17,8 +23,7 @@
 		//echo ($row['username']);
  		if (in_array($username, $row) or in_array($username, $row)) {
  			$check = 1;
- 			echo "That username/email already exists <br> Please, choose another one";
- 			session_destroy();
+ 			header("Location: index.php");
  			break;
  		}
  		
@@ -39,21 +44,9 @@
 		$stmt2->execute(array($id2[0], $username, $email, $incrip));
 
 		$_SESSION['username'] = $username;
- 		$loggin_session = $_SESSION['username'];
-		//printf ("You've successfuy created a new account. Welcome to your website %s!", $username);
-		header("Location: /LTW/main.php");
+
+ 		header("Location: main.php");
+ 		exit();
 	}
 
 ?>
-
-<html lang="en">
-  <head>
-    <title>Back to the form</title>
-    <meta charset="utf-8">
-  </head>
-
-  <body>
-  	<br>
- 	<a href="/LTW/index.html"> ---Back--- </a>
-  </body>
-</html>
