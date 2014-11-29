@@ -86,13 +86,16 @@ a{
 	cursor: pointer;
 }
 
-.form {
-	top: 200px;
+.form, .formim {
+	top: 140px;
 	left:30px;
  	position: relative;
  	list-style-position: block;
  	width: 100%;
  	color: #6E6E6E;
+}
+.formim{
+	top:-90px;
 }
 #title, #image, #question, #answer,#question1 {
 	font-family: Arial;
@@ -108,7 +111,13 @@ a{
 	font-size: 16px;
 	margin: 0px 0px 20px 0px;
 }
-#submit {
+#title{
+	margin-bottom: 80px;
+}
+#image{
+	margin:0px;
+}
+#submit, #submit1 {
 	margin: 0px 500px 0px 0px;
 	padding: 15px 30px 15px 30px;
 	color: white;
@@ -118,11 +127,14 @@ a{
  	opacity: 0.85;
  	background-color: #19A9C3;
 }
-
-#submit:hover{
+#submit1 {
+	padding: 13px 15px 12px 15px;
+}
+#submit:hover, #submit1:hover{
 	opacity: 1;
 	cursor: pointer;
 }
+
 
 footer {
 	width:100%;

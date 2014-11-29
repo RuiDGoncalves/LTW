@@ -26,7 +26,7 @@
 				</form>
 			</li>
     		<a href=""><li class="manage">Manage</li></a>
-    		<a href=""><li class="create">Create</li></a>
+    		<a href="../create.html"><li class="create">Create</li></a>
 		</ul>
 		<footer>
 			<p>2014 Pollaux © All rights reserved. </p>
