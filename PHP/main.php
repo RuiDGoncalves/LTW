@@ -1,5 +1,3 @@
-<?php include('login.php'); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -18,7 +16,7 @@
 			<a href="/LTW/PHP/logout.php" class="logout"><img src="../logout.png" height="25" width="25"></a>
 		</header>
 		<br><br>
-		<span id="user"> Hi, <?php echo("$loggin_session"); ?></span>
+		<!--<span id="user"> Hi, <?php echo("$username"); ?></span>-->
 		<ul class="list">
 			<li class="search">
 				<form class="form1" id="formlog" action="PHP/search.php" method="post">

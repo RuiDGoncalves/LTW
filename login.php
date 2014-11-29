@@ -1,3 +1,14 @@
+<?php
+	
+	session_start();
+
+	if(isset($_SESSION['username']) || isset($_COOKIE['username'])) {
+		header("Location: PHP/main.php");
+		exit();
+	}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -17,9 +28,10 @@
 		<nav>
 			<h1>Pollaux</h1>
 			<div class="login">
-				<form class="form" id="formlog" action="PHP/main.php" method="post">
+				<form class="form" id="formlog" action="PHP/login2.php" method="post">
 					<input type="text" id="username" name="usernameL" placeholder="Username" required>
 					<input type="password" id="password" name="passwordL" placeholder="Password" required>
+					<input type="checkbox" id="checkbox" name="remember"> Remember me
 					<input type="submit" id="submit" value="Log in!">
 				</form>
 			
