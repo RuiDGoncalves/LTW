@@ -20,6 +20,7 @@
  			if ($incrip === $row['password']) {
  				$check = 1;
  				printf ("Welcome back, %s!", $row['username']);
+ 				header("Location: /LTW/main.html");
  				break;
  			}
  			//else echo("asd");

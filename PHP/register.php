@@ -36,6 +36,7 @@
 		$stmt2->execute(array($id2[0], $username, $email, $incrip));
 
 		printf ("You've successfuy created a new account. Welcome to your website %s!", $username);
+		header("Location: /LTW/main.html");
 	}
 
 ?>
