@@ -42,8 +42,9 @@
 
 <html lang="en">
   <head>
-    <title>Back to the form</title>
+    <title>Pollaux</title>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="icon.png">
   </head>
 
   <body>

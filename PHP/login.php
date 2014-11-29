@@ -1,5 +1,7 @@
 <?php
 
+	session_start();
+
 	$dbh = new PDO('sqlite:database.db');
 
 	$username = $_POST['usernameL'];
@@ -16,10 +18,11 @@
 	while ($row = $stmt->fetch()) {
  		if (in_array($username, $row)) {
 			//echo ($row['password'] . '<br>');
-			//echo ($incrip);
+			//echo ($_SESSION['usernameL']);
  			if ($incrip === $row['password']) {
+ 				$_SESSION['username'] = $username;
+ 				$loggin_session = $_SESSION['username'];
  				$check = 1;
- 				printf ("Welcome back, %s!", $row['username']);
  				break;
  			}
  			//else echo("asd");
@@ -35,12 +38,14 @@
 
 <html lang="en">
   <head>
-    <title>Back to the form</title>
+    <title>Pollaux</title>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="icon.png">
   </head>
 
   <body>
   	<br>
- 	<a href="/LTW/login.html"> ---Back--- </a>
+  	Welcome back <?php echo $username; ?>
+ 	<a href="logout.php">Log Out</a>
   </body>
 </html>
