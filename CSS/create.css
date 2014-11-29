@@ -1,0 +1,136 @@
+@font-face {
+	font-family: "Organo";
+	src: url("Organo.ttf")
+}
+
+body {
+	background-image: url("main.jpg");
+	background-repeat: repeat;
+	margin: auto;
+}
+
+header {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	height: 45px;
+	background: -webkit-linear-gradient(white, #E6E6E6);
+    background: -o-linear-gradient(white, #E6E6E6);
+    background: -moz-linear-gradient(white, #E6E6E6);
+    background: linear-gradient(white, #E6E6E6);
+}
+
+.header_img {
+	margin-top: 10px;
+	position: relative;
+	left: 10%;
+}
+
+.header_title {
+	font-size: 20px;
+	font-family: Organo;
+	top: -13%;
+	color: #19A9C3;
+	margin: auto;
+	position: relative;
+	left: 82%;
+}
+li {
+    display: inline;
+    border: 0px solid #000;
+ 	opacity: 0.7;
+ 	background-color: #19A9C3;
+ 	font-size: 20px;
+ 	color: white;
+ 	text-shadow: #000 0px 1px 5px;
+ 	padding: 10px 20px 10px 20px;
+	border-left: 0px;
+	float: right;
+}
+a{
+	text-decoration: none;
+}
+.list{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+	width: 100%;
+	position: fixed;
+	top: 45px;
+	right: 0px;
+	left: 0px;
+	height: 45px;
+	color: white;
+}
+.create{
+}
+.back{
+}
+.back:hover{
+	opacity: 1;
+	cursor: pointer;	
+}
+.create:hover{
+	opacity: 1;
+	cursor: pointer;	
+}
+.logout{
+	margin-top: 10px;
+	margin-right:10px;
+	position: relative;
+	float:right;
+}
+.logout:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+
+.form {
+	top: 200px;
+	left:30px;
+ 	position: relative;
+ 	list-style-position: block;
+ 	width: 100%;
+ 	color: #6E6E6E;
+}
+#title, #image, #question, #answer,#question1 {
+	font-family: Arial;
+	text-align: left;
+	border:1px solid rgba(0,0,0,1);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 250px;
+	background:rgba(250,250,250,1);
+	color:#1A1A1A;
+	border-color: #B3B3A7;
+	font-size: 16px;
+	margin: 0px 0px 20px 0px;
+}
+#submit {
+	margin: 0px 500px 0px 0px;
+	padding: 15px 30px 15px 30px;
+	color: white;
+	text-transform: uppercase;
+ 	text-shadow: #000 0px 1px 5px;
+	border: 1px solid #000;
+ 	opacity: 0.85;
+ 	background-color: #19A9C3;
+}
+
+#submit:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+
+footer {
+	width:100%;
+	height:50px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	text-align: center;
+	color: white;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
