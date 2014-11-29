@@ -85,7 +85,16 @@ a{
 	opacity: 1;
 	cursor: pointer;	
 }
-
+.logout{
+	margin-top: 10px;
+	margin-right:10px;
+	position: relative;
+	float:right;
+}
+.logout:hover{
+	opacity: 1;
+	cursor: pointer;
+}
 footer {
 	width:100%;
 	height:50px;
