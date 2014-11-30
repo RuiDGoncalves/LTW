@@ -24,7 +24,7 @@ function insert($idPoll, $question) {
 
 	global $db;
 
-	$ins = $db->prepare('INSERT INTP question (idPoll, question) VALUES (?, ?)');
+	$ins = $db->prepare('INSERT INTO question (idPoll, question) VALUES (?, ?)');
 	$ins = execute(array($idPoll, $question[0]));
 
 	for($i = 1; $i < count($question); $i++) {
