@@ -24,7 +24,7 @@
  			
  			if ($incrip === $row['password']) {
 
- 				if($remember == "1")
+ 				if($remember == "0")
  					setcookie("username", $username, time() + 3600);
  				else
  					$_SESSION['username'] = $username;

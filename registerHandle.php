@@ -7,21 +7,22 @@
 		exit();
 	}
 
-	$dbh = new PDO('sqlite:database.db');
+	$dbh = new PDO('sqlite:Database/database.db');
 
 	$username = $_POST['usernameR'];
 	$email = $_POST['emailR'];
 	$password = $_POST['passwordR'];
-
+print($username);
+print($email);
 	$check = 0;
 
-	$stmt1 = $dbh->prepare('SELECT username, email FROM account WHERE username = ? or email = ?');
+	$stmt1 = $dbh->prepare('SELECT username, email FROM account WHERE username == ? or email == ?');
 	$stmt1->execute(array($username, $email));
 	$result = $stmt1->fetchAll();
 
 	foreach ($result as $row) {
 		//echo ($row['username']);
- 		if (in_array($username, $row) or in_array($username, $row)) {
+ 		if (in_array($username, $row)) {
  			$check = 1;
  			header("Location: index.php");
  			break;
