@@ -8,27 +8,21 @@ CREATE TABLE account (
 );
 
 CREATE TABLE poll(
-	idPoll INTEGER PRIMARY KEY,
-	title NVARCHAR2(20) NOT NULL,
-	image NVARCHAR2(20) NOT NULL,
-	public BOOLEAN,
-	accountId INTEGER,
-	FOREIGN KEY(accountId) REFERENCES account(idAccount)
+	idPoll INTEGER PRIMARY KEY AUTOINCREMENT,
+	idAccount INTEGER REFERENCES (account(idAccount)),
+	name TEXT NOT NULL
 );
 
 CREATE TABLE question(
-	idQuestion INTEGER PRIMARY KEY,
-	quest NVARCHAR2(20) NOT NULL,
-	pollId INTEGER,
-	FOREIGN KEY(pollId) REFERENCES poll(idPoll)
+	idQuestion INTEGER PRIMARY KEY AUTOINCREMENT,
+	idPoll INTEGER REFERENCES poll(idPoll),
+	qText TEXT NOT NULL
 );
 
 CREATE TABLE answer(
-	idAnswer INTEGER PRIMARY KEY,
-	answ NVARCHAR2(20) NOT NULL,
-	votes INTEGER,
-	questionId INTEGER,
-	FOREIGN KEY(questionId) REFERENCES question(idQuestion)
+	idAnswer INTEGER PRIMARY KEY AUTOINCREMENT,
+	idQuestion INTEGER REFERENCES question(idQuestion),
+	qText TEXT NOT NULL	
 );
 
 ---- EXEMPLO DE CONTA ----
