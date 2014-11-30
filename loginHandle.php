@@ -12,7 +12,6 @@
 	$username = $_POST['usernameL'];
 	$password = $_POST['passwordL'];
 	$remember = $_POST['remember'];
-
 	$salt1 = "a)x%5";
 	$salt2 = "p!y@*";
 	$incrip = hash('ripemd128', "$salt1$password$salt2");
@@ -25,7 +24,7 @@
  			
  			if ($incrip === $row['password']) {
 
- 				if($remember == "on")
+ 				if($remember == "1")
  					setcookie("username", $username, time() + 3600);
  				else
  					$_SESSION['username'] = $username;
@@ -35,7 +34,6 @@
  			}
  		}
 	}
-	
-	die("Incorrect username or password.");
-
+	echo "<SCRIPT>alert('Incorrect username or password.');</SCRIPT>";
+	header("Location: loginPage.php");
 ?>

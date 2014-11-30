@@ -8,7 +8,6 @@
 	}
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -31,7 +30,8 @@
 				<form class="form" id="formlog" action="loginHandle.php" method="post">
 					<input type="text" id="username" name="usernameL" placeholder="Username" required>
 					<input type="password" id="password" name="passwordL" placeholder="Password" required>
-					<input type="checkbox" id="checkbox" name="remember"> Remember me
+					<input type="hidden" id="checkbox1" name="remember" value="0" />
+					<input type="checkbox" id="checkbox" name="remember" value="1"> Remember me
 					<input type="submit" id="submit" value="Log in!">
 				</form>
 			
@@ -45,3 +45,4 @@
 		</div>
 	</body>
 </html>
+
