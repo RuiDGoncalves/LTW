@@ -2,7 +2,7 @@
 
 session_start();
 
-$db = new PDO('sqlite:database.db');
+$db = new PDO('sqlite:Database/database.db');
 
 function add_question() {
 
@@ -49,12 +49,12 @@ function create_poll() {
 
 	$row = $chk->fetch();
 
-	$ins = $db->pepare('INSERT INTO poll (idAccount, title) VALUES (?, ?)'); 
+	$ins = $db->prepare('INSERT INTO poll (idAccount, titleL) VALUES (?, ?)'); 
 
-	$idUser = $row['idUser'];
-	$title = $_POST['title'];
+	$idAccount = $row['idAccount'];
+	$titleL = $_POST['titleL'];
 
-	$ins->execute(array($idUser, $title));
+	$ins->execute(array($idAccount, $titleL));
 
 	$questions = add_question();
 
