@@ -2,7 +2,7 @@
 	
 	session_start();
 
-	if(isset($_SESSION['username']) || isset($_COOKIE['username'])) {
+	if(isset($_COOKIE['username'])) {
 		header("Location: main.php");
 		exit();
 	}

@@ -26,14 +26,17 @@
 
  				if($remember == "0")
  					setcookie("username", $username, time() + 3600);
- 				else
- 					$_SESSION['username'] = $username;
+ 				else{
+ 					
+ 					setcookie("username", $username);
+ 				}
 
  				header("Location: main.php");
  				exit();
  			}
  		}
 	}
-	echo "<SCRIPT>alert('Incorrect username or password.');</SCRIPT>";
 	header("Location: loginPage.php");
+	echo "<SCRIPT>alert('Incorrect username or password.');</SCRIPT>";
+	
 ?>
