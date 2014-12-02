@@ -20,15 +20,12 @@
 		</ul>
 		<form class="form" id="formlog" action="create.php" method="post">
 			<input type="text" id="title" name="titleL" placeholder="Title" required><br>
+			<input type="file" id="submit1" value="image" accept="image/*"><br>
 			<div><input type="text" id="question" name="question[]" placeholder="Question" required><br>
 			<input type="text" id="answer" name="question[]" placeholder="Answer" required><br></div>
-			<input type="hidden" id="image1" name="image1L"> 
 			<input type="submit" id="submit" value="Create">
 		</form>
-		<form class="formim" id="formlog1" action="JavaScript/findImage.js" method="post">
-				<input type="text" id="image" name="imageL" placeholder="Image" required>
-				<input type="submit" id="submit1" value="Search">
-			</form>
+		
 		<footer>
 			<p>2014 Pollaux © All rights reserved. </p>
 		</footer>
