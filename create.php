@@ -3,6 +3,7 @@
 session_start();
 
 $db = new PDO('sqlite:Database/database.db');
+$db->exec( 'PRAGMA foreign_keys = ON;' );
 
 function add_question() {
 
@@ -45,16 +46,33 @@ function create_poll() {
 
 	$chk = $db->prepare('SELECT * FROM account WHERE username = ?');
 
-	$chk->execute(array($_SESSION['username']));
+	$chk->execute(array($_COOKIE['username']));
 
 	$row = $chk->fetch();
-
-	$ins = $db->prepare('INSERT INTO poll (idAccount,name) VALUES (?, ?)'); 
-
+	
+	$target_file = "uploads/" . basename($_FILES["imageL"]["name"]);
+	$uploadOk = 1;
+	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+	if(isset($_POST["submit"])) {
+   		$check = getimagesize($_FILES["imageL"]["tmp_name"]);
+    	if($check == false){
+        	echo "File is not an image.";
+        	$uploadOk = 0;
+    	}
+    }
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} 
+else {
+    move_uploaded_file($_FILES["imageL"]["tmp_name"], $target_file);
+}
 	$idAccount = $row['idAccount'];
-	$name = $_POST['name'];
+	$name = $_POST['titleL'];
 
-	$ins->execute(array($idAccount, $name));
+	$stmt2 = $db->prepare('INSERT INTO poll (idPoll,idAccount,title,image) VALUES (?, ?, ?, ?)');
+	$stmt2->execute(array($idAccount, $idAccount, $name, $target_file));
 
 	$questions = add_question();
 
@@ -66,6 +84,7 @@ function create_poll() {
 
 		insert($row['idPoll'], $questions[$i]);
 	}
+
 }
 
 create_poll();

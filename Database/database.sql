@@ -1,4 +1,4 @@
-PRAGMA foreign_keys = on;
+PRAGMA foreign_keys = ON;
 
 CREATE TABLE account (
 	idAccount INTEGER PRIMARY KEY,
@@ -8,9 +8,11 @@ CREATE TABLE account (
 );
 
 CREATE TABLE poll(
-	idPoll INTEGER PRIMARY KEY AUTOINCREMENT,
-	idAccount INTEGER REFERENCES (account(idAccount)),
-	name TEXT NOT NULL
+	idPoll INTEGER PRIMARY KEY,
+	idAccount INTEGER CONSTRAINT idAccount REFERENCES account(idAccount),
+	title NVARCHAR2(20) NOT NULL,
+	image NVARCHAR2(50) NOT NULL,
+	public NVARCHAR2(10) NOT NUL
 );
 
 CREATE TABLE question(

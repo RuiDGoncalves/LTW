@@ -2,11 +2,10 @@
 
 	session_start();
 	
-	if(!(isset($_SESSION['username']) || isset($_COOKIE['username']))) {
+	if(!isset($_COOKIE['username'])) {
 		header("Location: loginPage.php");
 		exit();
 	}
-
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +22,7 @@
 		<header>
 			<img class="header_img" src="Icons/icon.png" 
 				 alt="Pollaux" height="25" width="25">
-			<b class="header_title">Pollaux</b>
+			<b class="header_title"> Pollaux</b>
 			<a href="logout.php" class="logout"><img src="Icons/logout.png" height="25" width="25"></a>
 		</header>
 		<br><br>
@@ -31,7 +30,7 @@
 		<ul class="list">
 			<li class="search">
 				<form class="form1" id="formlog" action="search.php" method="post">
-				<input type="text" id="search1" name="searchL" placeholder="Search Polls" required>
+					<input type="text" id="search1" name="searchL" placeholder="Search Polls" required>
 				</form>
 			</li>
     		<a href=""><li class="manage">Manage</li></a>

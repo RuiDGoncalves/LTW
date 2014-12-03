@@ -7,20 +7,21 @@ body {
 	background-image: url("main.jpg");
 	background-repeat: repeat;
 	margin: auto;
+	padding-top:45px ;
+	padding-bottom:50px;
 }
 
-header {
-	position: fixed;
-	top: 0px;
-	right: 0px;
-	left: 0px;
-	height: 45px;
-	background: -webkit-linear-gradient(white, #E6E6E6);
-    background: -o-linear-gradient(white, #E6E6E6);
-    background: -moz-linear-gradient(white, #E6E6E6);
-    background: linear-gradient(white, #E6E6E6);
-}
 
+footer {
+	width:100%;
+	height:50px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	text-align: center;
+	color: white;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
 .header_img {
 	margin-top: 10px;
 	position: relative;
@@ -132,13 +133,15 @@ a{
 }
 
 
-footer {
-	width:100%;
-	height:50px;
-	position:absolute;
-	bottom:0;
-	left:0;
-	text-align: center;
-	color: white;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+header {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	height: 45px;
+	background: -webkit-linear-gradient(white, #E6E6E6);
+    background: -o-linear-gradient(white, #E6E6E6);
+    background: -moz-linear-gradient(white, #E6E6E6);
+    background: linear-gradient(white, #E6E6E6);
 }

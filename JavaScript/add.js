@@ -1,28 +1,41 @@
-var counter = 1;
-var limit = 6;
-function addInput(divName){
-     if (counter == limit)  {
-          alert("You have reached the limit of inputs");
+var counterA = 1;
+var counterQ = 1;
+var limit = 10;
+
+$(document).ready(function() {
+   $("#addanswer").click(function() {
+       if (counterA == limit)  {
+          alert("You have reached the limit of answers for this question");
      }
      else {
-          var newdiv = document.createElement('div');
-          newdiv.innerHTML = "<input type='text' name='myInputs[]' placeholder='Answer'><br>";
-          document.getElementById(divName).appendChild(newdiv);
-          counter++;
+          $("#dynamicAnswer").append("<div><input type='text' id=answer name='question[]' placeholder='Answer'><br></div>");
+          counterA++;
      }
-}
+   });
+  $("#delanswer").click(function() {
 
-function deleteInput(divName){
+     if (counterA > 1){
 
-     //document.getElementById(divName).removeChild();
+      $("#dynamicAnswer div:last-child").last().remove();
 
-     var element = document.getElementById(divName);
-
-
-     if (counter > 2){
-
-      element.removeChild(element.lastChild);
-
-      counter--;
+      counterA--;
  }
-}
+   });
+  $("#addquestion").click(function() {
+        if (counterQ == limit)  {
+          alert("You have reached the limit of questions");
+     }
+     else {
+          $("#dynamicQuestion").append("<div id='q'><input type='text' id='question' name='question[]' placeholder='Question' required><br><div id='dynamicAnswer'><input type='text' id='answer' name='question[]' placeholder='Answer' required><input type='button' value='+' id='addanswer'><input type='button' value='x' id='delanswer'><br></div></div>");
+          counterQ++;
+     }
+   });
+  $("#delquestion").click(function() {
+
+     if (counterQ > 1){
+
+      $("#dynamicQuestion #q:last-child").last().remove();
+
+      counterQ--;
+   }});
+});

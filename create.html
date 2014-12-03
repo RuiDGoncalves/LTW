@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -8,6 +9,9 @@
 	</head>
 
 	<body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+	  <script type="text/javascript" src="JavaScript/add.js"></script>
 		<div class="wrapper">
 		<header>
 			<img class="header_img" src="Icons/icon.png" 
@@ -18,11 +22,26 @@
 		<ul class="list">
     		<a href="main.php"><li class="back">Back</li></a>
 		</ul>
-		<form class="form" id="formlog" action="create.php" method="post">
+		<form class="form" id="formlog" action="create.php" method="post" enctype="multipart/form-data">
 			<input type="text" id="title" name="titleL" placeholder="Title" required><br>
-			<input type="file" id="submit1" value="image" accept="image/*"><br>
-			<div><input type="text" id="question" name="question[]" placeholder="Question" required><br>
-			<input type="text" id="answer" name="question[]" placeholder="Answer" required><br></div>
+			<input type="file" id="submit1" name="imageL" value="image" accept="image/*"><br>
+			<div id="dynamicQuestion">
+				<div id="q">
+					<input type="text" id="question" name="question[]" placeholder="Question" required>
+					<input type="button" value="+" id="addquestion">
+    				<input type="button" value="x" id="delquestion">
+    				<br>
+					<div id="dynamicAnswer">
+						<input type="text" id="answer" name="question[]" placeholder="Answer" required> 
+						<input type="button" value="+" id="addanswer">
+						<input type='button' value='x' id='delanswer'>
+						<br>
+					</div>
+				</div>
+			</div>
+			<input type="hidden" id="checkbox1" name="check" value="0" />
+			<input type="checkbox" id="checkbox" name="check" value="1"> Private
+			<br>
 			<input type="submit" id="submit" value="Create">
 		</form>
 		
