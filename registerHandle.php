@@ -22,7 +22,7 @@ print($email);
 
 	foreach ($result as $row) {
 		//echo ($row['username']);
- 		if (in_array($username, $row)) {
+ 		if (in_array($username, $row) || in_array($email, $row)) {
  			$check = 1;
  			header("Location: index.php");
  			break;

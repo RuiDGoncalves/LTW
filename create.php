@@ -8,13 +8,13 @@ $db->exec( 'PRAGMA foreign_keys = ON;' );
 function add_question() {
 
 	$questions = array(array());
-	$a = 1;
 	$q = 0;
 
 	while(isset($_POST ['question'.$q])){
 		$questions[$q][0] = $_POST ['question'.$q];
-		while(isset($_POST['answer'.$a-1])){
-			$questions[$q][$a] = $_POST['answer'.$a-1];
+		$a=1;
+		while(isset($_POST['answer'.$q.($a-1)])){
+			$questions[$q][$a] = $_POST['answer'.$q.($a-1)];
 			$a++;
 		}
 		$q++;
@@ -34,8 +34,8 @@ function insert($idPoll, $question) {
 	$row = $chk->fetch();
 
 	for($i = 1; $i < count($question); $i++) {
-		$ins = $db->prepare('INSERT INTO answer (idQuestion, aText,votes) VALUES (?, ?, ?)');
-		$ins->execute(array($row['idQuestion'], $question[$i],0));
+		$ins1 = $db->prepare('INSERT INTO answer (idQuestion, aText,votes) VALUES (?, ?, ?)');
+		$ins1->execute(array($row['idQuestion'], $question[$i],'0'));
 	}
 }
 
@@ -43,6 +43,8 @@ function insert($idPoll, $question) {
 function create_poll() {
 
 	global $db;
+
+	
 
 	$chk = $db->prepare('SELECT * FROM account WHERE username = ?');
 	if(isset($_COOKIE['username'])){
@@ -79,6 +81,7 @@ if ($uploadOk == 0) {
 else {
     move_uploaded_file($_FILES["imageL"]["tmp_name"], $target_file);
 }
+
 	$idAccount = $row['idAccount'];
 	$name = $_POST['titleL'];
 

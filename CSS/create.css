@@ -121,7 +121,7 @@ a{
  	opacity: 0.85;
  	background-color: #19A9C3;
 }
-.but{
+.addquestion, .delquestion, .addanswer, .delanswer{
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-left: 10px;
@@ -140,7 +140,7 @@ a{
 	padding-right: 160px;
 	margin: 0px 0px 20px 0px;
 }
-#submit:hover, #submit1:hover, .but:hover{
+#submit:hover, #submit1:hover, .addquestion:hover, .delquestion:hover, .addanswer:hover, .delanswer:hover{
 	opacity: 1;
 	cursor: pointer;
 }

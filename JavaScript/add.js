@@ -3,38 +3,40 @@ var counterQ = 1;
 var limit = 10;
 
 $(document).ready(function() {
-   $("#addanswer").click(function() {
+   $(".addanswer").click(function() {
        if (counterA == limit)  {
           alert("You have reached the limit of answers for this question");
      }
      else {
-          $("#dynamicAnswer").append("<div><input type='text' class=answer name='answer"+counterA+"' placeholder='Answer'><br></div>");
+          var x = $(this).parent();
+          var y = x.attr('id').substr(x.attr('id').length - 1);
+          $(x).append("<div><input type='text' class=answer name='answer"+y+counterA+"' placeholder='Answer'><br></div>");
           counterA++;
      }
    });
-  $("#delanswer").click(function() {
+  $(".delanswer").click(function() {
 
      if (counterA > 1){
-
-      $("#dynamicAnswer div:last-child").last().remove();
+      var x = $(this).parent().attr('id');
+      $("#"+x+" div:last-child").last().remove();
 
       counterA--;
  }
    });
-  $("#addquestion").click(function() {
+  $(".addquestion").click(function() {
         if (counterQ == limit)  {
           alert("You have reached the limit of questions");
      }
      else {
-          $("#dynamicQuestion").append("<div id='q'><input type='text' id='question' name='question[]' placeholder='Question' required><br><div id='dynamicAnswer'><input type='text' id='answer' name='question[]' placeholder='Answer' required><input type='button' value='+' id='addanswer'><input type='button' value='x' id='delanswer'><br></div></div>");
+          $("#multiple").append('<div id="dynamicQuestion'+counterQ+'"><input type="text" class="question" name="question'+counterQ+'" placeholder="Question" required><br><div id="dynamicAnswer'+counterQ+'"><input type="text" class="answer" name="answer'+counterQ+'0" placeholder="Answer" required><input type="button" class="addanswer" value="+"><input type="button" class="delanswer" value="x"><br></div></div>');
           counterQ++;
      }
    });
-  $("#delquestion").click(function() {
+  $(".delquestion").click(function() {
 
      if (counterQ > 1){
 
-      $("#dynamicQuestion #q:last-child").last().remove();
+      $("#multiple div:last-child").last().remove();
 
       counterQ--;
    }});
