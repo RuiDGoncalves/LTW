@@ -8,16 +8,17 @@ $db->exec( 'PRAGMA foreign_keys = ON;' );
 function add_question() {
 
 	$questions = array(array());
-	$i = 0;
+	$a = 1;
+	$q = 0;
 
-	$questions[0][0] = $_POST ['question[0]'];
-
-	while(isset($_POST['answer'.$i])){
-
-		$question[0][$i] = $_POST['answer'.$i];
-		$i++;
+	while(isset($_POST ['question'.$q])){
+		$questions[$q][0] = $_POST ['question'.$q];
+		while(isset($_POST['answer'.$a-1])){
+			$questions[$q][$a] = $_POST['answer'.$a-1];
+			$a++;
+		}
+		$q++;
 	}
-
 	return $questions;
 }
 
@@ -26,16 +27,15 @@ function insert($idPoll, $question) {
 	global $db;
 
 	$ins = $db->prepare('INSERT INTO question (idPoll, qText) VALUES (?, ?)');
-	$ins = execute(array($idPoll, $question[0]));
+	$ins -> execute(array($idPoll, $question[0]));
+
+	$chk = $db->prepare('SELECT * FROM question WHERE qText = ?');
+	$chk->execute(array($question[0]));
+	$row = $chk->fetch();
 
 	for($i = 1; $i < count($question); $i++) {
-
-		$chk = $db->prepare('SELECT * FROM question WHERE qText = ?');
-		$chk->execute(array($question[0]));
-		$row = $chk->fetch();
-
-		$ins = $db->prepare('INSERT INTO answer (idQuestion, qText) VALUES (?, ?)');
-		$ins->execute(array($row['idQuestion'], $question[$i]));
+		$ins = $db->prepare('INSERT INTO answer (idQuestion, aText,votes) VALUES (?, ?, ?)');
+		$ins->execute(array($row['idQuestion'], $question[$i],0));
 	}
 }
 
@@ -45,7 +45,7 @@ function create_poll() {
 	global $db;
 
 	$chk = $db->prepare('SELECT * FROM account WHERE username = ?');
-	if(isset($_COOKIE['username']){
+	if(isset($_COOKIE['username'])){
 		$chk->execute(array($_COOKIE['username']));
 	}
 	else{
@@ -54,6 +54,13 @@ function create_poll() {
 
 	$row = $chk->fetch();
 	
+	if($_POST['check']=="0"){
+		$public="public";
+	}
+	else{
+		$public="private";
+	}
+
 	$target_file = "uploads/" . basename($_FILES["imageL"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -75,22 +82,20 @@ else {
 	$idAccount = $row['idAccount'];
 	$name = $_POST['titleL'];
 
-	$stmt2 = $db->prepare('INSERT INTO poll (idPoll,idAccount,title,image) VALUES (?, ?, ?, ?)');
-	$stmt2->execute(array($idAccount, $idAccount, $name, $target_file));
+	$stmt2 = $db->prepare('INSERT INTO poll (idAccount,title,image,public) VALUES (?, ?, ?, ?)');
+	$stmt2->execute(array($idAccount, $name, $target_file, $public));
 
 	$questions = add_question();
 
+	$chk = $db->prepare('SELECT * FROM poll WHERE title = ?');
+	$chk->execute(array($name));
+	$row = $chk->fetch();
 	for($i = 0; $i < count($questions); $i++) {
-
-		$chk = $db->prepare('SELECT * FROM poll WHERE name = ?');
-		$chk->execute(aray($name));
-		$row = $chk->fetch();
-
 		insert($row['idPoll'], $questions[$i]);
 	}
-
 }
 
 create_poll();
-
+sleep(5);
+header("Location: main.php");
 ?>

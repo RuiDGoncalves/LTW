@@ -17,21 +17,21 @@ CREATE TABLE poll(
 
 CREATE TABLE question(
 	idQuestion INTEGER PRIMARY KEY AUTOINCREMENT,
-	idPoll INTEGER REFERENCES poll(idPoll),
+	idPoll INTEGER CONSTRAINT idPoll REFERENCES poll(idPoll),
 	qText TEXT NOT NULL
 );
 
 CREATE TABLE answer(
 	idAnswer INTEGER PRIMARY KEY AUTOINCREMENT,
-	idQuestion INTEGER REFERENCES question(idQuestion),
+	idQuestion INTEGER CONSTRAINT idQuestion REFERENCES question(idQuestion),
 	aText TEXT NOT NULL,
 	votes INTEGER NOT NULL
 );
 
 CREATE TABLE rela(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	idQuestion INTEGER REFERENCES question(idQuestion),
-	idAccount INTEGER REFERENCES account(idAccount)
+	idQuestion INTEGER CONSTRAINT idQuestion REFERENCES question(idQuestion),
+	idAccount INTEGER CONSTRAINT idAccount REFERENCES account(idAccount)
 );
 
 ---- EXEMPLO DE CONTA ----
