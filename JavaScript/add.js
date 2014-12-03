@@ -4,23 +4,23 @@ var limit = 10;
 
 $(document).ready(function() {
    $(".addanswer").click(function() {
-       if (counterA == limit)  {
+          var x = $(this).parent();
+          var y = x.attr('id').substr(x.attr('id').length - 1);
+       if (counterA[y] == limit)  {
           alert("You have reached the limit of answers for this question");
      }
      else {
-          var x = $(this).parent();
-          var y = x.attr('id').substr(x.attr('id').length - 1);
+          
           $(x).append("<div><input type='text' class=answer name='answer"+y+counterA[y]+"' placeholder='Answer'><br></div>");
           counterA[y]++;
      }
    });
   $(".delanswer").click(function() {
-
-     if (counterA > 1){
         var x = $(this).parent();
         var y = x.attr('id').substr(x.attr('id').length - 1);
+     if (counterA[y] > 1){
         var z = $(this).parent().attr('id');
-        $("#"+z+" div:last-child").last().remove();
+        $("#"+z+" div:last-child").remove();
 
       counterA[y]--;
  }
@@ -39,7 +39,7 @@ $(document).ready(function() {
 
      if (counterQ > 1){
 
-      $("#multiple div:last-child").last().remove();
+      $("#multiple div:last-child").remove();
 
       counterQ--;
    }});
