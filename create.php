@@ -10,7 +10,7 @@ function add_question() {
 	$questions = array(array());
 	$i = 0;
 
-	$questions[0][0] = $_POST ['question1'];
+	$questions[0][0] = $_POST ['question[0]'];
 
 	while(isset($_POST['answer'.$i])){
 

@@ -8,11 +8,11 @@ CREATE TABLE account (
 );
 
 CREATE TABLE poll(
-	idPoll INTEGER PRIMARY KEY,
+	idPoll INTEGER PRIMARY KEY AUTOINCREMENT,
 	idAccount INTEGER CONSTRAINT idAccount REFERENCES account(idAccount),
-	title NVARCHAR2(20) NOT NULL,
-	image NVARCHAR2(50) NOT NULL,
-	public NVARCHAR2(10) NOT NUL
+	title TEXT NOT NULL,
+	image TEXT NOT NULL,
+	public TEXT NOT NULL
 );
 
 CREATE TABLE question(
@@ -24,7 +24,14 @@ CREATE TABLE question(
 CREATE TABLE answer(
 	idAnswer INTEGER PRIMARY KEY AUTOINCREMENT,
 	idQuestion INTEGER REFERENCES question(idQuestion),
-	qText TEXT NOT NULL	
+	aText TEXT NOT NULL,
+	votes INTEGER NOT NULL
+);
+
+CREATE TABLE rela(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	idQuestion INTEGER REFERENCES question(idQuestion),
+	idAccount INTEGER REFERENCES account(idAccount)
 );
 
 ---- EXEMPLO DE CONTA ----

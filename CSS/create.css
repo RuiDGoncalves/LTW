@@ -7,10 +7,11 @@ body {
 	background-image: url("main.jpg");
 	background-repeat: repeat;
 	margin: auto;
+}
+.wrapper{
 	padding-top:45px ;
 	padding-bottom:50px;
 }
-
 
 footer {
 	width:100%;
@@ -96,7 +97,7 @@ a{
  	color: #6E6E6E;
 }
 
-#title, #question, #answer,#question1 {
+#title, .question, .answer {
 	font-family: Arial;
 	text-align: left;
 	border:1px solid rgba(0,0,0,1);
@@ -120,6 +121,18 @@ a{
  	opacity: 0.85;
  	background-color: #19A9C3;
 }
+.but{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0px 0px 10px 0px;
+	color: white;
+	text-shadow: #000 0px 1px 5px;
+	border: 1px solid #000;
+ 	opacity: 0.85;
+ 	background-color: #19A9C3;
+}
 #submit1 {
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -127,7 +140,7 @@ a{
 	padding-right: 160px;
 	margin: 0px 0px 20px 0px;
 }
-#submit:hover, #submit1:hover{
+#submit:hover, #submit1:hover, .but:hover{
 	opacity: 1;
 	cursor: pointer;
 }

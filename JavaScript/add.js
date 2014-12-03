@@ -8,7 +8,7 @@ $(document).ready(function() {
           alert("You have reached the limit of answers for this question");
      }
      else {
-          $("#dynamicAnswer").append("<div><input type='text' id=answer name='question[]' placeholder='Answer'><br></div>");
+          $("#dynamicAnswer").append("<div><input type='text' class=answer name='answer"+counterA+"' placeholder='Answer'><br></div>");
           counterA++;
      }
    });
