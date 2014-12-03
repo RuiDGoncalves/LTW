@@ -42,7 +42,7 @@ print($email);
 		$incrip = hash('ripemd128', "$salt1$password$salt2");
 
 		$stmt2 = $dbh->prepare('INSERT INTO account (idAccount, username, email, password) VALUES (?, ?, ?, ?)');
-		$stmt2->execute(array($id2[0], $username, $email, $incrip));
+		$stmt2->execute(array($id2[0]+1, $username, $email, $incrip));
 
 		$_SESSION['username'] = $username;
 

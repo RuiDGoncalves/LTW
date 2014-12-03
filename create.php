@@ -45,8 +45,12 @@ function create_poll() {
 	global $db;
 
 	$chk = $db->prepare('SELECT * FROM account WHERE username = ?');
-
-	$chk->execute(array($_COOKIE['username']));
+	if(isset($_COOKIE['username']){
+		$chk->execute(array($_COOKIE['username']));
+	}
+	else{
+		$chk->execute(array($_SESSION['username']));
+	}
 
 	$row = $chk->fetch();
 	
