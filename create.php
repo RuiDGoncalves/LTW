@@ -1,104 +1,61 @@
 <?php
 
-session_start();
-
-$db = new PDO('sqlite:Database/database.db');
-$db->exec( 'PRAGMA foreign_keys = ON;' );
-
-function add_question() {
-
-	$questions = array(array());
-	$q = 0;
-
-	while(isset($_POST ['question'.$q])){
-		$questions[$q][0] = $_POST ['question'.$q];
-		$a=1;
-		while(isset($_POST['answer'.$q.($a-1)])){
-			$questions[$q][$a] = $_POST['answer'.$q.($a-1)];
-			$a++;
-		}
-		$q++;
-	}
-	return $questions;
-}
-
-function insert($idPoll, $question) {
-
-	global $db;
-
-	$ins = $db->prepare('INSERT INTO question (idPoll, qText) VALUES (?, ?)');
-	$ins -> execute(array($idPoll, $question[0]));
-
-	$chk = $db->prepare('SELECT * FROM question WHERE qText = ?');
-	$chk->execute(array($question[0]));
-	$row = $chk->fetch();
-
-	for($i = 1; $i < count($question); $i++) {
-		$ins1 = $db->prepare('INSERT INTO answer (idQuestion, aText,votes) VALUES (?, ?, ?)');
-		$ins1->execute(array($row['idQuestion'], $question[$i],'0'));
-	}
-}
-
-
-function create_poll() {
-
-	global $db;
-
+	session_start();
 	
-
-	$chk = $db->prepare('SELECT * FROM account WHERE username = ?');
-	if(isset($_COOKIE['username'])){
-		$chk->execute(array($_COOKIE['username']));
+	if(!(isset($_SESSION['username']) || isset($_COOKIE['username']))) {
+		header("Location: loginPage.php");
+		exit();
 	}
-	else{
-		$chk->execute(array($_SESSION['username']));
-	}
-
-	$row = $chk->fetch();
-	
-	if($_POST['check']=="0"){
-		$public="public";
-	}
-	else{
-		$public="private";
-	}
-
-	$target_file = "uploads/" . basename($_FILES["imageL"]["name"]);
-	$uploadOk = 1;
-	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-	if(isset($_POST["submit"])) {
-   		$check = getimagesize($_FILES["imageL"]["tmp_name"]);
-    	if($check == false){
-        	echo "File is not an image.";
-        	$uploadOk = 0;
-    	}
-    }
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} 
-else {
-    move_uploaded_file($_FILES["imageL"]["tmp_name"], $target_file);
-}
-
-	$idAccount = $row['idAccount'];
-	$name = $_POST['titleL'];
-
-	$stmt2 = $db->prepare('INSERT INTO poll (idAccount,title,image,public) VALUES (?, ?, ?, ?)');
-	$stmt2->execute(array($idAccount, $name, $target_file, $public));
-
-	$questions = add_question();
-
-	$chk = $db->prepare('SELECT * FROM poll WHERE title = ?');
-	$chk->execute(array($name));
-	$row = $chk->fetch();
-	for($i = 0; $i < count($questions); $i++) {
-		insert($row['idPoll'], $questions[$i]);
-	}
-}
-
-create_poll();
-sleep(5);
-header("Location: main.php");
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Pollaux</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="CSS/create.css" hreflang="en">
+		<link rel="shortcut icon" href="Icons/icon.png">
+	</head>
+
+	<body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	  	<script type="text/javascript" src="JavaScript/add.js"></script>
+		<div class="wrapper">
+		<header>
+			<img class="header_img" src="Icons/icon.png" 
+				 alt="Pollaux" height="25" width="25">
+			<a href="main.php"><b class="header_title">Pollaux</b></a>
+			<a href="logout.php" class="logout"><img src="Icons/logout.png" height="25" width="25"></a>
+		</header>
+		<ul class="list">
+    		<a href="main.php"><li class="back">Back</li></a>
+		</ul>
+		<form class="form" id="formlog" action="createHandle.php" method="post" enctype="multipart/form-data">
+			<input type="text" id="title" name="titleL" placeholder="Title" required><br>
+			<input type="file" id="submit1" name="imageL" value="image" accept="image/*"><br>
+			<div id="multiple">
+				<div id="dynamicQuestion0">
+					<input type="text" class="question" name="question0" placeholder="Question" required>
+					<input type="button" class="addquestion" value="+">
+    				<input type="button" class="delquestion" value="x">
+    				<br>
+					<div id="dynamicAnswer0">
+						<input type="text" class="answer" name="answer00" placeholder="Answer" required> 
+						<input type="button" class="addanswer" value="+">
+						<input type="button" class="delanswer" value="x">
+						<br>
+					</div>
+				</div>
+			</div>
+			<input type="hidden" id="checkbox1" name="check" value="0" />
+			<input type="checkbox" id="checkbox" name="check" value="1"> Private
+			<br>
+			<input type="submit" id="submit" value="Create">
+		</form>
+		
+		<footer>
+			<p>2014 Pollaux © All rights reserved. </p>
+		</footer>
+		</div>
+	</body>
+</html>
