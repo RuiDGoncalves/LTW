@@ -18,6 +18,9 @@
 	</head>
 
 	<body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	  	<script type="text/javascript" src="JavaScript/search.js"></script>
+		
 		<div class="wrapper">
 		<header>
 			<img class="header_img" src="Icons/icon.png" 
@@ -35,6 +38,8 @@
 			</li>
     		<a href=""><li class="manage">Manage</li></a>
     		<a href="create.php"><li class="create">Create</li></a>
+		</ul>
+		<ul id="polls">
 		</ul>
 		<footer>
 			<p>2014 Pollaux © All rights reserved. </p>

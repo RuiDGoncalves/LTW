@@ -1,9 +1,37 @@
-var counterA = 1;
-var counterQ = 1;
-var limit = 10;
 
 $(document).ready(function() {
-   $("#search1").keypress(function() {
-        $.ajax({ url: '../search.php' });
+	if($("#search1").val()==""){
+		$.get('./search.php?res='+'allPolls', function(polls) {
+        if (!polls) {
+        	$('#polls').html('<p class="noPolls">There are no Polls created</p>');
+        } 
+        else {
+        	$('#polls').html(polls);
+        }
+   		});
+	}
+   $("#search1").keyup(function() {
+   		var value= $(this).val();
+   		if(value==""){
+   			$.get('./search.php?res='+'allPolls', function(polls) {
+        	if (!polls) {
+        		$('#polls').html('<p class="noPolls">There are no Polls created</p>');
+        	} 
+        	else {
+        		$('#polls').html(polls);
+        	}
+   			});
+   		}
+   		else{
+   			$.get('./search.php?res='+value, function(polls) {
+       		if (!polls) {
+        		$('#polls').html('<p class="noPolls">No Results</p>');
+        	} 
+        	else {
+        		$('#polls').html(polls);
+        	}
+   			});
+   		}
+       	
    });
 });
