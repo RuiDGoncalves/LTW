@@ -9,9 +9,6 @@ $(document).ready(function() {
         }
    		});
     //get vote user
-
-
-    });
    });
   function functionColor(ol) {
  		var x=document.getElementById(ol.id);
