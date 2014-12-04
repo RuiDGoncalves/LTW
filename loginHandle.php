@@ -24,11 +24,10 @@
  			
  			if ($incrip === $row['password']) {
 
- 				if($remember == "0")
+ 				if($remember == "1")
  					setcookie("username", $username, time() + 3600);
  				else{
- 					
- 					setcookie("username", $username);
+ 					$_SESSION['username'] = $username;
  				}
 
  				header("Location: main.php");
