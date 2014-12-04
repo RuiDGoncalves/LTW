@@ -51,11 +51,10 @@
 			<input type="checkbox" id="checkbox" name="check" value="1"> Private
 			<br>
 			<input type="submit" id="submit" value="Create">
-		</form>
-		
+		</form>		
+		</div>
 		<footer>
 			<p>2014 Pollaux © All rights reserved. </p>
 		</footer>
-		</div>
 	</body>
 </html>

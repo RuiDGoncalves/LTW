@@ -13,17 +13,19 @@ body {
 	padding-bottom:50px;
 }
 
-footer {
-	width:100%;
-	height:50px;
-	position:absolute;
-	float:bottom;
-	bottom:0;
-	left:0;
-	text-align: center;
-	color: white;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+header {
+	z-index: 1;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	height: 45px;
+	background: -webkit-linear-gradient(white, #E6E6E6);
+    background: -o-linear-gradient(white, #E6E6E6);
+    background: -moz-linear-gradient(white, #E6E6E6);
+    background: linear-gradient(white, #E6E6E6);
 }
+
 .header_img {
 	margin-top: 10px;
 	position: relative;
@@ -94,7 +96,7 @@ a{
 	left:30px;
  	position: relative;
  	list-style-position: block;
- 	width: 100%;
+ 	width: 97%;
  	color: #6E6E6E;
 }
 
@@ -146,17 +148,14 @@ a{
 	cursor: pointer;
 }
 
-
-
-header {
-	z-index: 1;
-	position: fixed;
-	top: 0px;
-	right: 0px;
-	left: 0px;
-	height: 45px;
-	background: -webkit-linear-gradient(white, #E6E6E6);
-    background: -o-linear-gradient(white, #E6E6E6);
-    background: -moz-linear-gradient(white, #E6E6E6);
-    background: linear-gradient(white, #E6E6E6);
+footer {
+	width:100%;
+	height:50px;
+	position:absolute;
+	float:bottom;
+	bottom:0;
+	left:0;
+	text-align: center;
+	color: white;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }

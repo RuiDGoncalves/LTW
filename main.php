@@ -28,7 +28,6 @@
 			<b class="header_title"> Pollaux</b>
 			<a href="logout.php" class="logout"><img src="Icons/logout.png" height="25" width="25"></a>
 		</header>
-		<br><br>
 		<p id="user"> Hi, <?php echo($_SESSION['username']); ?></p>
 		<ul class="list">
 			<li class="search">
@@ -39,6 +38,7 @@
     		<a href="manage.php"><li class="manage">Manage</li></a>
     		<a href="create.php"><li class="create">Create</li></a>
 		</ul>
+		<p class="ti">Pollaux</p>
 		<ul id="polls">
 		</ul>
 		<footer>
