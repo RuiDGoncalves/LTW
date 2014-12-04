@@ -19,7 +19,7 @@
 
 	<body>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-	  	<script type="text/javascript" src="JavaScript/search.js"></script>
+	  	<script type="text/javascript" src="JavaScript/searchbyuser.js"></script>
 		
 		<div class="wrapper">
 		<header>
@@ -36,8 +36,8 @@
 					<input type="text" id="search1" name="searchL" placeholder="Search Polls" required>
 				</form>
 			</li>
-    		<a href="manage.php"><li class="manage">Manage</li></a>
-    		<a href="create.php"><li class="create">Create</li></a>
+    		<a href=""><li class="manage">Edit</li></a>
+    		<a href=""><li class="create">Delete</li></a>
 		</ul>
 		<ul id="polls">
 		</ul>

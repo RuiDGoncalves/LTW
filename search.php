@@ -7,12 +7,24 @@ if(isset($_GET['res'])){
   $search = $_GET['res'];
 
   if($search == "allPolls"){
-  	$stmt = $db->prepare('SELECT * FROM poll');
-  	$stmt->execute(array());
+    if(isset($_GET['user'])){
+       $stmt = $db->prepare('SELECT * FROM poll WHERE idAccount=?');
+       $stmt->execute(array($_GET['user']));
+     }
+    else{
+  	   $stmt = $db->prepare('SELECT * FROM poll WHERE public=?');
+  	$stmt->execute(array('public'));
+  }
   }
   else{
-  $stmt = $db->prepare('SELECT * FROM poll WHERE title Like ? and public=?');
+    if(isset($_GET['user'])){
+  $stmt = $db->prepare('SELECT * FROM poll WHERE title Like ? AND idAccount=?');
+  $stmt->execute(array('%'.$search.'%',$_GET['user']));
+}
+else{
+   $stmt = $db->prepare('SELECT * FROM poll WHERE title Like ? and public=?');
   $stmt->execute(array('%'.$search.'%','public'));
+}
 }
 $res="";
   while($row = $stmt->fetch()){

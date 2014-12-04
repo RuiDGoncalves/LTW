@@ -99,6 +99,6 @@ else {
 }
 
 create_poll();
-sleep(5);
+sleep(2);
 header("Location: main.php");
 ?>
