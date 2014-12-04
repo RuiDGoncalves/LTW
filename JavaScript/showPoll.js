@@ -8,4 +8,26 @@ $(document).ready(function() {
         	$('#polls').html(polls);
         }
    		});
+    //get vote user
+
+
+    });
    });
+  function functionColor(ol) {
+ 		var x=document.getElementById(ol.id);
+     	x.style.backgroundColor="#FBB117";
+     	
+     }
+ 
+ 
+ function vote(ol) {
+
+ 	$.get('./vote.php?poll='+$('#tit').val(),function(ans){
+    	
+    });
+ }
+  function getvoteuser(ol){
+  	$.get('./getVoteUser.php?poll='+$('#tit').val(),function(ans){
+    	//return 2d array
+    });
+  }

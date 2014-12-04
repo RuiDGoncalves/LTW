@@ -9,19 +9,22 @@ $pollName = $_GET['poll'];
 $stmt->execute(array($pollName));
 
 $result = $stmt->fetch();
-$res='<h1 class="titulo">'.$result['title'].'</h1>';
+$res='<h1 class="titulo" id="tit">'.$result['title'].'</h1>';
 $res.='<img class="image" src="'.$result['image'].'">';
 
 $stmt = $db->prepare('SELECT * FROM question WHERE idPoll = ?');
 $stmt->execute(array($result['idPoll']));
-
+$count1=0;
 while($row = $stmt->fetch()){
+	$count=0;
 	$stmt1 = $db->prepare('SELECT * FROM answer WHERE idQuestion = ?');
 	$stmt1->execute(array($result['idPoll']));
-	$res.='<h3 class="pergunta">'.$row['qText'].'</h3><ul class="listanswer">';
+	$res.='<h3 class="pergunta" id="pergunta'.$count1.'">'.$row['qText'].'</h3><ul class="listanswer">';
 	while($row1 = $stmt1->fetch()){
-		$res.='<li class="answer">'.$row1['aText'].'</li>';
+		$res.='<li class="answer" id="'.'answer'.$count1.$count.'" onclick="functionColor('.'answer'.$count1.$count.')">'.$row1['aText'].'</li>';
+		$count++;
 	}
+	$count1++;
 	$res.='</ul>';
 }
 echo $res;

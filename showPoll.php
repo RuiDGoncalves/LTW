@@ -3,7 +3,7 @@
 	<head>
 		<title>Pollaux</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="CSS/main.css" hreflang="en">
+		<link rel="stylesheet" href="CSS/show.css" hreflang="en">
 		<link rel="shortcut icon" href="Icons/icon.png">
 	</head>
 

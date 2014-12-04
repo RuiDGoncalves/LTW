@@ -1,0 +1,148 @@
+@font-face {
+	font-family: "Organo";
+	src: url("Organo.ttf")
+}
+
+body {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	background-image: url("main.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+header {
+	z-index: 1;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	height: 45px;
+	background: -webkit-linear-gradient(white, #E6E6E6);
+    background: -o-linear-gradient(white, #E6E6E6);
+    background: -moz-linear-gradient(white, #E6E6E6);
+    background: linear-gradient(white, #E6E6E6);
+}
+
+.header_img {
+	margin-top: 10px;
+	position: relative;
+	left: 10%;
+}
+
+.header_title {
+	font-size: 20px;
+	font-family: Organo;
+	top: -13%;
+	color: #19A9C3;
+	margin: auto;
+	position: relative;
+	left: 82%;
+}
+
+p#user {
+	position: relative;
+	color: white;
+	font-size: 25px;
+	right: -62.5%;
+	top: 29px;
+}
+
+.create {
+    display: inline;
+    border: 0px solid #000;
+ 	opacity: 0.7;
+ 	background-color: #19A9C3;
+ 	font-size: 20px;
+ 	color: white;
+ 	text-shadow: #000 0px 1px 5px;
+ 	padding: 10px 20px 10px 20px;
+	border-left: 0px;
+	float: right;
+}
+
+a{
+	text-decoration: none;
+}
+
+.list{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+	width: 100%;
+	position: relative;
+	top: -38px;
+	right: 0px;
+	left: 0px;
+	height: 45px;
+	color: white;
+}
+
+.create:hover{
+	opacity: 1;
+	cursor: pointer;	
+}
+.logout{
+	margin-top: 10px;
+	margin-right:10px;
+	position: relative;
+	float:right;
+}
+.logout:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+
+
+#polls{
+	list-style-type: none;
+	margin-top: 70px;
+	margin-bottom: 50px;
+	margin-left: 200px;
+	margin-right: 200px;
+	padding: 25px 0px 0px 0px;
+}
+.titulo{
+	color: #19A9C3;
+	text-align: center;
+	font-size: 50px;
+}
+.image{
+	max-width: 600px;
+	max-height: 600px;
+position: relative;
+  left: 50%;
+  margin-left: -300px;
+
+}
+.pergunta{
+	color:white;
+	font-size: 30px;
+}
+.answer{
+	border: 0px solid #000;
+ 	opacity: 0.7;
+ 	background-color: #19A9C3;
+ 	font-size: 20px;
+ 	color: white;
+ 	text-shadow: #000 0px 1px 5px;
+ 	padding: 10px 10px 10px 50px;
+	border-left: 0px;
+	margin-bottom: 5px;
+}
+
+.pollRes:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+
+footer {
+	width:100%;
+	height:50px;
+	position:relative;
+	bottom:0;
+	left:0;
+	text-align: center;
+	color: white;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
