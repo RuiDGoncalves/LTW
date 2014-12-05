@@ -41,6 +41,8 @@
 			</li>
     		<a href="manage.php"><li class="manage">Manage</li></a>
     		<a href="create.php"><li class="create">Create</li></a>
+    		<a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=youremail@gmail.com&body=Please visit the best poll site ever https://www.pollaux.com   "><img src="http://media.idownloadblog.com/wp-content/uploads/2013/11/Gmail-2.7182-for-iOS-app-icon-small-55x55.png"/></a>
+
 		</ul>
 		<p class="ti">Pollaux</p>
 		<ul id="polls">
