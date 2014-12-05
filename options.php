@@ -25,7 +25,7 @@
 			<b class="header_title"> Pollaux</b>
 			<a href="logout.php" class="logout"><img src="Icons/logout.png" height="25" width="25"></a>
 		</header>
-		<p id="user"> Hi, <?php 
+		<p id="user_options"> Hi, <?php 
 							if(isset($_SESSION['username'])) 
 								echo($_SESSION['username']); 
 							else
@@ -33,9 +33,11 @@
 		<ul class="list">
     		<a href="manage.php"><li class="manage">Back</li></a>
 		</ul>
-		<p><h1>  d  </h1></p>
-		<?php echo '<a href="showPoll.php?poll='.$_GET['name'].'" class="view">View Poll</a>' ?>
-		<?php echo '<a href="delete.php?id='.$_GET['id'].'" class="delete">Delete Poll</a>' ?>
+		
+		<ul class="list2">
+			<?php echo '<a href="showPoll.php?poll='.$_GET['name'].'" class="view">View Poll</a>' ?>
+			<?php echo '<a href="delete.php?id='.$_GET['id'].'" class="delete">Delete Poll</a>' ?>
+		</ul>
 		<footer>
 			<p>2014 Pollaux © All rights reserved. </p>
 		</footer>
