@@ -48,6 +48,8 @@ p#user {
 	top: 29px;
 }
 
+
+
 .back {
     display: inline;
     border: 0px solid #000;
@@ -59,6 +61,14 @@ p#user {
  	padding: 10px 20px 10px 20px;
 	border-left: 0px;
 	float: right;
+}
+
+.addthis_sharing_toolbox {
+	display: inline;
+ 	color: white;
+ 	position: relative; 
+	top: -38px;
+	float: left;
 }
 
 a{
