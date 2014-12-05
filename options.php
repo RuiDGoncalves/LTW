@@ -18,9 +18,6 @@
 	</head>
 
 	<body>
-    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-	  	
-	  	<script type="text/javascript" src="JavaScript/searchbyuser.js"></script>
 		
 		<div class="wrapper">
 		<header>
@@ -34,13 +31,10 @@
 							else
 								echo($_COOKIE['username']); ?></p>
 		<ul class="list">
-			<li class="search">
-				<form class="form1" id="formlog" action="search.php" method="post">
-					<input type="text" id="search1" name="searchL" placeholder="Search Polls" required>
-				</form>
-			</li>
-    		<a href="main.php"><li class="manage">Back</li></a>
+    		<a href="manage.php"><li class="manage">Back</li></a>
 		</ul>
+		<?php echo '<a href="showPoll.php?poll='.$_GET['name'].'">View Poll</a>' ?>
+		<?php echo '<a href="delete.php?id='.$_GET['id'].'">Delete Poll</a>' ?>
 		<ul id="polls">
 		</ul>
 		<footer>

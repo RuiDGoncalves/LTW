@@ -43,5 +43,16 @@ $(document).ready(function() {
    		}
        	
    });
+  
 });
+
+  
 });
+ $(function() {
+  $(".pollRes").on("click",function() {
+    alert("Oo");
+  });
+});
+  function mana(ol){
+    alert("qqq");
+   }

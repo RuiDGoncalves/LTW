@@ -31,7 +31,7 @@ $res="";
     if(!isset($_GET['user']))
       $res .= '<a href="showPoll.php?poll='. $row['title'].'"><li class="pollRes">'.$row['title'].'</li></a><br>';
     else
-      $res .= '<li class="pollRes" id="manage'.$row['idPoll'].'" onclick="manage'.$row['idPoll'].'">'.$row['title'].'</li><br>';
+      $res .= '<a href="options.php?id='.$row['idPoll'].'&name='.$row['title'].'"><li class="pollRes">'.$row['title'].'</li></a><br>';
     
   }
 
