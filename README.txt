@@ -5,8 +5,7 @@ Projeto LTW -> 5th December
 - Poll
    - Create
    - Manage
-		- Edit
-		- Delete
+   - Delete
 - List, Search, Answer poll
 		
 		
