@@ -45,7 +45,6 @@ function create_poll() {
 	global $db;
 
 	
-
 	$chk = $db->prepare('SELECT * FROM account WHERE username = ?');
 	if(isset($_COOKIE['username'])){
 		$chk->execute(array($_COOKIE['username']));
@@ -85,17 +84,35 @@ else {
 	$idAccount = $row['idAccount'];
 	$name = $_POST['titleL'];
 
-	$stmt2 = $db->prepare('INSERT INTO poll (idAccount,title,image,public) VALUES (?, ?, ?, ?)');
-	$stmt2->execute(array($idAccount, $name, $target_file, $public));
+	$check = 0;
 
-	$questions = add_question();
+	$sta = $db->prepare('SELECT title FROM poll WHERE title = ?');
+	$sta->execute(array($name));
+	$res = $sta->fetchAll();
 
-	$chk = $db->prepare('SELECT * FROM poll WHERE title = ?');
-	$chk->execute(array($name));
-	$row = $chk->fetch();
-	for($i = 0; $i < count($questions); $i++) {
-		insert($row['idPoll'], $questions[$i]);
+	foreach ($res as $row) {
+ 		if (in_array($name, $row)) {
+ 			$check = 1;
+ 			break;
+ 		}
+ 		
 	}
+
+	if ( $check == 0 ) {
+
+		$stmt2 = $db->prepare('INSERT INTO poll (idAccount,title,image,public) VALUES (?, ?, ?, ?)');
+		$stmt2->execute(array($idAccount, $name, $target_file, $public));
+
+		$questions = add_question();
+
+		$chk = $db->prepare('SELECT * FROM poll WHERE title = ?');
+		$chk->execute(array($name));
+		$row = $chk->fetch();
+		for($i = 0; $i < count($questions); $i++) {
+			insert($row['idPoll'], $questions[$i]);
+		}
+	}
+
 }
 
 create_poll();

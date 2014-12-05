@@ -12,8 +12,8 @@
 	$username = $_POST['usernameR'];
 	$email = $_POST['emailR'];
 	$password = $_POST['passwordR'];
-print($username);
-print($email);
+	//print($username);
+	//print($email);
 	$check = 0;
 
 	$stmt1 = $dbh->prepare('SELECT username, email FROM account WHERE username == ? or email == ?');
