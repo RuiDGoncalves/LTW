@@ -30,7 +30,7 @@ CREATE TABLE answer(
 
 CREATE TABLE rela(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	idQuestion INTEGER CONSTRAINT idQuestion REFERENCES question(idQuestion),
+	idAnswer INTEGER CONSTRAINT idAnswer REFERENCES answer(idAnswer),
 	idAccount INTEGER CONSTRAINT idAccount REFERENCES account(idAccount)
 );
 

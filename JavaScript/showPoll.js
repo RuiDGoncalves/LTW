@@ -9,22 +9,31 @@ $(document).ready(function() {
         }
    		});
     //get vote user
+
    });
-  function functionColor(ol) {
- 		var x=document.getElementById(ol.id);
-     	x.style.backgroundColor="#FBB117";
-     	
-     }
  
  
  function vote(ol) {
-
- 	$.get('./vote.php?poll='+$('#tit').val(),function(ans){
-    	
+ 	var x=ol.id.replace('answer','');
+ 	$.get('./vote.php?poll='+x,function(ans){
+     	if(ans==0)
+    		alert("You already voted on this question/ You are not logged in");
+    	else{
+    		var y=document.getElementById(ol.id);
+     		y.style.backgroundColor="#FBB117";
+    	}
     });
  }
   function getvoteuser(ol){
-  	$.get('./getVoteUser.php?poll='+$('#tit').val(),function(ans){
-    	//return 2d array
+ 	var x=ol.id.replace('pergunta','');
+  	$.get('./getVoteUser.php?quest='+x,function(ans){
+  		var y='answer'+ans;
+  		if(ans){
+ 			var x=document.getElementById(y);
+     		x.style.backgroundColor="#FBB117";
+    	}
+
     });
   }
+
+  

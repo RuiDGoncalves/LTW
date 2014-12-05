@@ -28,8 +28,11 @@
 			<b class="header_title"> Pollaux</b>
 			<a href="logout.php" class="logout"><img src="Icons/logout.png" height="25" width="25"></a>
 		</header>
-		<br><br>
-		<!--<span id="user"> Hi, <?php echo("$username"); ?></span>-->
+		<p id="user"> Hi, <?php 
+							if(isset($_SESSION['username'])) 
+								echo($_SESSION['username']); 
+							else
+								echo($_COOKIE['username']); ?></p>
 		<ul class="list">
 			<li class="search">
 				<form class="form1" id="formlog" action="search.php" method="post">

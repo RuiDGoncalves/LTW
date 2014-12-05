@@ -10,8 +10,9 @@
 
 	<body>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-	  	<script type="text/javascript" src="JavaScript/showPoll.js"></script>
-		<?php  echo "<input type='hidden' id='poll' value='".$_GET['poll']."'>"  ?>
+	  	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	  	<script type="text/javascript" src="JavaScript/showGraph.js"></script>
+		<?php  echo "<input type='hidden' id='quest' value='".$_GET['quest']."'><input type='hidden' id='questname' value='".$_GET['name']."'>"  ?>
 		<div class="wrapper">
 		<header>
 			<img class="header_img" src="Icons/icon.png" 
@@ -22,7 +23,7 @@
 		<ul class="list">
     		<a href="main.php"><li class="create">Back</li></a>
 		</ul>
-		<div id="polls">
+		<div id="grafico" style="margin-left: 400px; width: 900px; height: 500px;">
 		</div>
 		<footer>
 			<p>2014 Pollaux © All rights reserved. </p>
