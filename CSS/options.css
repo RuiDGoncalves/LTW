@@ -24,6 +24,10 @@ header {
     background: linear-gradient(white, #E6E6E6);
 }
 
+.wrapper {
+	margin-bottom: 300px;
+}
+
 .header_img {
 	top: 10px;
 	position: relative;
@@ -44,13 +48,11 @@ p#user {
 	position: relative;
 	color: white;
 	font-size: 25px;
-	right: -62.5%;
+	right: -45%;
 	top: 29px;
 }
 
-
-
-.back {
+.manage, .view, .delete {
     display: inline;
     border: 0px solid #000;
  	opacity: 0.7;
@@ -60,15 +62,12 @@ p#user {
  	text-shadow: #000 0px 1px 5px;
  	padding: 10px 20px 10px 20px;
 	border-left: 0px;
-	float: right;
+	
 }
 
-.addthis_sharing_toolbox {
-	display: inline;
- 	color: white;
- 	position: relative; 
-	top: -38px;
-	float: left;
+.view, .delete {
+	margin: 0px, 300px, 0px, 300px;
+	left: 100%;
 }
 
 a{
@@ -77,9 +76,10 @@ a{
 
 .list{
 	list-style-type: none;
-    margin-top: 83px;
+    margin: 0;
     padding: 0;
-	width: 100%;
+	width: 50%;
+	float: right;
 	position: relative;
 	top: -38px;
 	right: 0px;
@@ -87,12 +87,18 @@ a{
 	height: 45px;
 	color: white;
 }
-
-.back:hover{
-	opacity: 1;
-	cursor: pointer;	
+.manage{
+	float: right;
+	border-right:1px solid rgba(255,255,255,1);
+	border-left:1px solid rgba(255,255,255,1);
 }
-.logout{
+
+.manage:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+
+.logout {
 	margin-top: 10px;
 	margin-right:10px;
 	position: relative;
@@ -103,53 +109,11 @@ a{
 	cursor: pointer;
 }
 
-#polls{
-	list-style-type: none;
-	margin-top: -30px;
-	margin-bottom: 50px;
-	margin-left: 200px;
-	margin-right: 200px;
-	padding: 25px 0px 0px 0px;
-}
-.titulo{
-	color: #19A9C3;
-	text-align: center;
-	font-size: 50px;
-}
-.image{
-	max-width: 600px;
-	max-height: 600px;
-position: relative;
-  left: 50%;
-  margin-left: -300px;
-
-}
-.pergunta{
-	color:white;
-	font-size: 30px;
-}
-.answer{
-	border: 0px solid #000;
- 	opacity: 0.7;
- 	background-color: #19A9C3;
- 	font-size: 20px;
- 	color: white;
- 	text-shadow: #000 0px 1px 5px;
- 	padding: 10px 10px 10px 50px;
-	border-left: 0px;
-	margin-bottom: 5px;
-}
-
-.pollRes:hover{
-	opacity: 1;
-	cursor: pointer;
-}
-
 footer {
 	width:100%;
 	height:50px;
-	position:relative;
-	float: bottom;
+	position: relative;
+	bottom:0;
 	left:0;
 	text-align: center;
 	color: white;

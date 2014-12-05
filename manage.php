@@ -24,7 +24,7 @@
 		
 		<div class="wrapper">
 		<header>
-			<img class="header_img" src="Icons/icon.png" alt="Pollaux" height="25" width="25">
+			<a href="main.php" class="header_img"><img src="Icons/icon.png" alt="Pollaux" height="25" width="25"></a>
 			<b class="header_title"> Pollaux</b>
 			<a href="logout.php" class="logout"><img src="Icons/logout.png" height="25" width="25"></a>
 		</header>

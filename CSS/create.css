@@ -27,7 +27,7 @@ header {
 }
 
 .header_img {
-	margin-top: 10px;
+	top: 10px;
 	position: relative;
 	left: 10%;
 }
@@ -35,7 +35,7 @@ header {
 .header_title {
 	font-size: 20px;
 	font-family: Organo;
-	top: -13%;
+	top: 5px;
 	color: #19A9C3;
 	margin: auto;
 	position: relative;
