@@ -44,7 +44,7 @@ p#user {
 	position: relative;
 	color: white;
 	font-size: 25px;
-	right: -800px;
+	right: -52.5%;
 	top: 29px;
 }
 .addthis_sharing_toolbox {
@@ -165,8 +165,4 @@ footer {
 	text-align: center;
 	color: white;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-}
-#contextMenu {
-  position: absolute;
-  display:none;
 }
