@@ -21,9 +21,9 @@
 			<a href="logout.php" class="logout"><img src="Icons/logout.png" height="25" width="25"></a>
 		</header>
 		<ul class="list">
-    		<a href="main.php"><li class="create">Back</li></a>
+    		<?php echo '<a href="showPoll.php?poll='.$_GET['val'].'"><li class="back">Back</li></a>'?>
 		</ul>
-		<div id="grafico" style="margin-left: 400px; width: 900px; height: 500px;">
+		<div id="grafico" style="margin-top: 28px; margin-left: 270px; width: 80%; height: 550px;">
 		</div>
 		<footer>
 			<p>2014 Pollaux © All rights reserved. </p>

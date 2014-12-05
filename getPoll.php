@@ -18,7 +18,7 @@ $stmt->execute(array($result['idPoll']));
 while($row = $stmt->fetch()){
 	$stmt1 = $db->prepare('SELECT * FROM answer WHERE idQuestion = ?');
 	$stmt1->execute(array($row['idQuestion']));
-	$res.='<a href="showGraph.php?quest='.$row['idQuestion'].'&name='.$row['qText'].'"><h3 class="pergunta" id="pergunta'.$row['idQuestion'].'">'.$row['qText'].'</h3></a><ul class="listanswer">';
+	$res.='<a href="showGraph.php?quest='.$row['idQuestion'].'&name='.$row['qText'].'&val='.$result['title'].'"><h3 class="pergunta" id="pergunta'.$row['idQuestion'].'">'.$row['qText'].'</h3></a><ul class="listanswer">';
 	while($row1 = $stmt1->fetch()){
 		$res.='<li class="answer" id="'.'answer'.$row1['idAnswer'].'"onclick="vote('.'answer'.$row1['idAnswer'].')">'.$row1['aText'].'</li>';
 	}

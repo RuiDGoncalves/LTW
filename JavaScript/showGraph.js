@@ -5,7 +5,6 @@
       var id=$('#quest').val();
       var name=$('#questname').val();
       $.get('./getArray.php?id='+id, function(poll) {
-        alert(poll);
         var x=JSON.parse(poll);
         
         var answer= [];

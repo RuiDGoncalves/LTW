@@ -20,7 +20,7 @@
 			<a href="logout.php" class="logout"><img src="Icons/logout.png" height="25" width="25"></a>
 		</header>
 		<ul class="list">
-    		<a href="main.php"><li class="create">Back</li></a>
+    		<a href="manage.php"><li class="back">Back</li></a>
 		</ul>
 		<div id="polls">
 		</div>
