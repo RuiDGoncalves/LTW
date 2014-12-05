@@ -18,7 +18,8 @@
 	</head>
 
 	<body>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	  	<script type="text/javascript" src="JavaScript/manage.js"></script>
 	  	<script type="text/javascript" src="JavaScript/searchbyuser.js"></script>
 		
 		<div class="wrapper">
@@ -39,8 +40,7 @@
 					<input type="text" id="search1" name="searchL" placeholder="Search Polls" required>
 				</form>
 			</li>
-    		<a href=""><li class="manage">Edit</li></a>
-    		<a href=""><li class="create">Delete</li></a>
+    		<a href="main.php"><li class="manage">Back</li></a>
 		</ul>
 		<ul id="polls">
 		</ul>

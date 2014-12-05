@@ -166,3 +166,7 @@ footer {
 	color: white;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
+#contextMenu {
+  position: absolute;
+  display:none;
+}

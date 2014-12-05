@@ -28,8 +28,11 @@ else{
 }
 $res="";
   while($row = $stmt->fetch()){
-    $res .= '<a href="showPoll.php?poll='. $row['title'].'"><li class="pollRes">'.$row['title'].'</li></a><br>';
-
+    if(!isset($_GET['user']))
+      $res .= '<a href="showPoll.php?poll='. $row['title'].'"><li class="pollRes">'.$row['title'].'</li></a><br>';
+    else
+      $res .= '<li class="pollRes" id="manage'.$row['idPoll'].'" onclick="manage'.$row['idPoll'].'">'.$row['title'].'</li><br>';
+    
   }
 
   echo  $res;
