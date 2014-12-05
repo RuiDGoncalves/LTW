@@ -44,8 +44,14 @@ p#user {
 	position: relative;
 	color: white;
 	font-size: 25px;
-	right: -62.5%;
+	right: -52.5%;
 	top: 29px;
+}
+.addthis_sharing_toolbox {
+	display: inline;
+ 	color: white;
+ 	padding: 20px 0 0 0px;
+	float: left;
 }
 
 .search, .manage, .create {
@@ -69,7 +75,8 @@ a{
 	list-style-type: none;
     margin: 0;
     padding: 0;
-	width: 100%;
+	width: 50%;
+	float: right;
 	position: relative;
 	top: -38px;
 	right: 0px;

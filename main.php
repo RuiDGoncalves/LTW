@@ -20,7 +20,9 @@
 	<body>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 	  	<script type="text/javascript" src="JavaScript/search.js"></script>
-		
+
+		<div class="addthis_sharing_toolbox" style="z-index: 20000;"></div>
+
 		<div class="wrapper">
 		<header>
 			<img class="header_img" src="Icons/icon.png" 
@@ -41,7 +43,7 @@
 			</li>
     		<a href="manage.php"><li class="manage">Manage</li></a>
     		<a href="create.php"><li class="create">Create</li></a>
-    		<a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=youremail@gmail.com&body=Please visit the best poll site ever https://www.pollaux.com   "><img src="http://media.idownloadblog.com/wp-content/uploads/2013/11/Gmail-2.7182-for-iOS-app-icon-small-55x55.png"/></a>
+    	<!--	<a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=youremail@gmail.com&body=Please visit the best poll site ever https://www.pollaux.com   "><img src="http://media.idownloadblog.com/wp-content/uploads/2013/11/Gmail-2.7182-for-iOS-app-icon-small-55x55.png"/></a> -->
 
 		</ul>
 		<p class="ti">Pollaux</p>
@@ -51,5 +53,8 @@
 			<p>2014 Pollaux © All rights reserved. </p>
 		</footer>
 		</div>
+
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5480f58b7bf6b6fb" async="async"></script>
 	</body>
 </html>
